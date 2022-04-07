@@ -1,5 +1,6 @@
-import { describe, it, expect } from 'vitest'
 import { $fetch } from 'ohmyfetch'
+import { ok } from 'assert'
+import { info, setFailed } from '@actions/core'
 
 const deployments = {
   vercel: 'https://nitro-deployment.vercel.app/',
@@ -11,21 +12,28 @@ const deployments = {
   // github: 'https://unjs.github.io/nitro-deploys/',
 }
 
-const behaviour = (url: string) => () => {
-  it('should fetch HTML', async () => {
-    expect(await $fetch(url)).to.contain('Welcome to nitro')
-  })
-  it('should fetch API', async () => {
-    expect(await $fetch(url + 'api/hello')).to.contain('Hello World!')
-  })
+const behaviour = async url => {
+  info(`testing ${url}`)
+  try {
+    ok(
+      await $fetch(url).then(r => r.includes('Welcome to nitro')),
+      'should fetch HTML'
+    )
+    ok(
+      await $fetch(url + 'api/hello').then(r => r.includes('Hello World!')),
+      'should fetch API'
+    )
+  } catch (e) {
+    setFailed(e)
+  }
 }
 
 // CI dispatch to check one URL only
 const url = process.env.DEPLOYMENT_URL
 if (url) {
-  describe(`${url}`, behaviour(url))
+  await behaviour(url)
 } else {
   for (const preset in deployments) {
-    describe(preset, behaviour(deployments[preset]))
+    await behaviour(deployments[preset])
   }
 }
