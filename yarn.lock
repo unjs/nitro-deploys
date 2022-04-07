@@ -1943,10 +1943,10 @@ needle@^2.2.1:
     iconv-lite "^0.4.4"
     sax "^1.2.4"
 
-nitropack-edge@^0.1.2-27488954.e229115:
-  version "0.1.2-27488954.e229115"
-  resolved "https://registry.yarnpkg.com/nitropack-edge/-/nitropack-edge-0.1.2-27488954.e229115.tgz#0ded04599e7b6d95c4816f0223d342473a4c2fb7"
-  integrity sha512-mcL+E61UGcYkh52xTNm8m7OojgAH0pnTlmUriT4oItE7zH8sBEb9HPBGtS8ilrB4XzOBuBboUDFJRVDTykr6QA==
+nitropack-edge@^0.1.2-27489105.19c784b:
+  version "0.1.2-27489105.19c784b"
+  resolved "https://registry.yarnpkg.com/nitropack-edge/-/nitropack-edge-0.1.2-27489105.19c784b.tgz#7bc8614747ce11e66004cd1a69ab271754918b33"
+  integrity sha512-ZH4ICF7vkgEQ4X3LrwEHSfbHOlDfpkqGIfLUvzyL3rwO/2cDlh6Xwmpw2PO5eVCetVREb4b3MzbPkN5ADtzZcw==
   dependencies:
     "@cloudflare/kv-asset-handler" "^0.2.0"
     "@netlify/functions" "^1.0.0"
