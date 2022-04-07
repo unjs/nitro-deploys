@@ -31,8 +31,8 @@ jobs:
           api_location: ".output/server" # Api source code path - optional
           output_location: ".output/public" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
-      - name: test
-        # if: github.event_name == 'push'
+      - name: Test deployed site
+        if: github.event_name == 'push'
         run: yarn test
         env:
           DEPLOYMENT_URL: https://icy-pond-008be3f03.1.azurestaticapps.net/

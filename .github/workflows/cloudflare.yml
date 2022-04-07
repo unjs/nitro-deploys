@@ -27,6 +27,7 @@ jobs:
       - uses: cloudflare/wrangler-action@1.3.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
-      - run: yarn test
+      - name: Test deployed site
+        run: yarn test
         env:
           DEPLOYMENT_URL: https://nitro-deployment.pi0.workers.dev/

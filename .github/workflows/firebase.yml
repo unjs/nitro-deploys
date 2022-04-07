@@ -25,6 +25,7 @@ jobs:
           args: deploy --project nitro-deployment
         env:
           GCP_SA_KEY: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_NITRO_DEPLOYMENT }}"
-      - run: yarn test
+      - name: Test deployed site
+        run: yarn test
         env:
           DEPLOYMENT_URL: https://nitro-deployment.web.app/
