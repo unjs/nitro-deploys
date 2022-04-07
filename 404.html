@@ -2,11 +2,11 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <link rel="prefetch" href="/sw.js">
-  <link rel="prefetch" href="/_server/index.mjs">
+  <link rel="prefetch" href="/nitro-deploys/sw.js">
+  <link rel="prefetch" href="/nitro-deploys/_server/index.mjs">
   <script>
   async function register () {
-    const registration = await navigator.serviceWorker.register('/sw.js')
+    const registration = await navigator.serviceWorker.register('/nitro-deploys/sw.js')
     await navigator.serviceWorker.ready
     registration.active.addEventListener('statechange', (event) => {
       if (event.target.state === 'activated') {
