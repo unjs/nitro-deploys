@@ -8,6 +8,8 @@
     "test": "yarn lint"
   },
   "devDependencies": {
-    "nitropack-edge": "^0.1.2-27489105.19c784b"
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.20.0",
+    "nitropack-edge": "^0.1.2-27489137.7700500"
   }
 }
