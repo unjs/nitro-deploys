@@ -22,4 +22,4 @@ jobs:
       - run: yarn install
       - run: yarn test
         env:
-          DEPLOYMENT_URL: ${{ github.event.inputs.url || github.event.deployment.url }}
+          DEPLOYMENT_URL: ${{ github.event.inputs.url || github.event.deployment.target_url }}
