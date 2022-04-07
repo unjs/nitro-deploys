@@ -10,7 +10,7 @@ on:
   deployment_status:
 
 jobs:
-  deploy:
+  test_url:
     runs-on: ${{ matrix.os }}
 
     strategy:
