@@ -8,6 +8,6 @@
     "test": "yarn lint"
   },
   "devDependencies": {
-    "nitropack-edge": "^0.0.0-27488178.1d31ec9"
+    "nitropack-edge": "^0.0.0-27488257.ce3aaf6"
   }
 }

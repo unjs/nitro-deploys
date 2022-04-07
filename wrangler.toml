@@ -1,6 +1,6 @@
-name = "nitro-deploys"
+name = "nitro-deployment"
 type = "javascript"
-account_id = ""
+account_id = "f1e84ebed8564d989bffd46d5a988296"
 workers_dev = true
 route = ""
 zone_id = ""

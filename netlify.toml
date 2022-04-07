@@ -6,7 +6,7 @@
   targetPort = 3000
 
 [build]
-  command = "npm run generate"
+  command = "yarn build"
   publish = "dist"
   functions = ".output/server"
 

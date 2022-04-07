@@ -41,7 +41,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          NITRO_PRESET: browser
+          NITRO_PRESET: service-worker
           NITRO_APP_ROUTER_BASE: /nitro-deploys/
 
       - name: Deploy to Github Pages
