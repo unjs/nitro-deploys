@@ -5,4 +5,4 @@
 - **Cloudflare Workers**: https://nitro-deployment.pi0.workers.dev
 - **Github Pages** (Service Worker): https://unjs.github.io/nitro-deploys/
 - **Azure Functions**: https://nitro-deployment.azurewebsites.net/
-- **Azure Static Web Apps**: [TODO]
+- **Azure Static Web Apps**: https://icy-pond-008be3f03.1.azurestaticapps.net/
