@@ -32,7 +32,7 @@ jobs:
           output_location: ".output/public" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
       - name: test
-        if: github.event_name == 'push'
+        # if: github.event_name == 'push'
         run: yarn test
         env:
           DEPLOYMENT_URL: https://icy-pond-008be3f03.1.azurestaticapps.net/
