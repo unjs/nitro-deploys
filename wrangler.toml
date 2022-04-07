@@ -4,6 +4,7 @@ account_id = "f1e84ebed8564d989bffd46d5a988296"
 workers_dev = true
 route = ""
 zone_id = ""
+compatibility_date = "2022-04-07"
 
 [site]
 bucket = "./.output/public"
