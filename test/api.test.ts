@@ -2,8 +2,7 @@ import { describe, it, expect } from 'vitest'
 import { $fetch } from 'ohmyfetch'
 
 const deployments = {
-  // TODO: fix vercel deployment
-  // vercel: 'https://nitro-deployment.vercel.app/',
+  vercel: 'https://nitro-deployment.vercel.app/',
   netlify: 'https://nitro-deployment.netlify.app/',
   cloudflare: 'https://nitro-deployment.pi0.workers.dev/',
   azure: 'https://icy-pond-008be3f03.1.azurestaticapps.net/',
