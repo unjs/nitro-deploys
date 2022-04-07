@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="prefetch" href="/sw.js">
+  <link rel="prefetch" href="/_server/index.mjs">
+  <script>
+  async function register () {
+    const registration = await navigator.serviceWorker.register('/sw.js')
+    await navigator.serviceWorker.ready
+    registration.active.addEventListener('statechange', (event) => {
+      if (event.target.state === 'activated') {
+        window.location.reload()
+      }
+    })
+  }
+  if (location.hostname !== 'localhost' && location.protocol === 'http:') {
+    location.replace(location.href.replace('http://', 'https://'))
+  } else {
+    register()
+  }
+  </script>
+</head>
+
+<body>
+  Initializing nitro service worker...
+</body>
+</html>

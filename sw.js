@@ -1,0 +1,1 @@
+self.importScripts('/_server/index.mjs');
