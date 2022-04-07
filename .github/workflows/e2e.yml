@@ -11,6 +11,7 @@ on:
 
 jobs:
   test_url:
+    if: github.event.deployment_status.state == 'success' || github.event_name == 'workflow_dispatch'
     runs-on: ${{ matrix.os }}
 
     strategy:
