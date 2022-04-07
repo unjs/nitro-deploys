@@ -1,0 +1,16 @@
+[dev]
+  command = "sleep 999999999"
+  framework = "#custom"
+  functions = ".output/server"
+  port = 8888
+  targetPort = 3000
+
+[build]
+  command = "npm run generate"
+  publish = "dist"
+  functions = ".output/server"
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/index"
+  status = 200

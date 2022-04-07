@@ -1,0 +1,14 @@
+name = "nitro-deploys"
+type = "javascript"
+account_id = ""
+workers_dev = true
+route = ""
+zone_id = ""
+
+[site]
+bucket = "./.output/public"
+entry-point = "./.output"
+
+[build]
+command = "true"
+upload.format = "service-worker"
