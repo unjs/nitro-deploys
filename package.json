@@ -4,6 +4,7 @@
     "build": "nitro build",
     "dev": "nitro dev",
     "lint": "eslint --ext .ts .",
+    "postinstall": "rm -rf .output",
     "start": "node .output/server/index.mjs",
     "test": "node test/api.test.mjs"
   },
