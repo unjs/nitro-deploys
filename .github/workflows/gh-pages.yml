@@ -24,7 +24,7 @@ jobs:
       - run: yarn build
         env:
           NITRO_PRESET: service-worker
-          NITRO_APP_ROUTER_BASE: /nitro-deploys/
+          NITRO_APP_BASE_URL: /nitro-deploys/
       - uses: JamesIves/github-pages-deploy-action@4.3.0
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
