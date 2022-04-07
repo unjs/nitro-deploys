@@ -4,14 +4,10 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    types: [opened, synchronize, reopened, closed]
-    branches:
-      - main
+      - firebase
 
 jobs:
   build_and_preview:
-    if: github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -23,28 +19,9 @@ jobs:
       - run: yarn build
         env:
           NITRO_PRESET: firebase
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@v2.0.0
         with:
-          repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_NITRO_DEPLOYMENT }}"
-          projectId: nitro-deployment
-
-  deploy_live_website:
-    if: github.event_name == 'push'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node }}
-          cache: yarn
-      - run: yarn install
-      - run: yarn build
+          args: deploy --project nitro-deployment
         env:
-          NITRO_PRESET: firebase
-      - uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_NITRO_DEPLOYMENT }}"
-          channelId: live
-          projectId: nitro-deployment
+          GCP_SA_KEY: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_NITRO_DEPLOYMENT }}"
