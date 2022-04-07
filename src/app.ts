@@ -1,5 +1,3 @@
-import { defineEventHandler } from 'h3'
-
 export default defineEventHandler(() => {
   const links = [
     '/api/hello'
