@@ -11,6 +11,8 @@ const deployments = {
   'azure-functions': 'https://nitro-deployment.azurewebsites.net/',
   firebase: 'https://nitro-deployment.web.app/',
   render: 'https://nitro-deployment.onrender.com/',
+  heroku: 'https://nitro-deployment.herokuapp.com/',
+  digitalocean: 'https://nitro-deployment-w5dzm.ondigitalocean.app/',
   // This is purely client-side
   // github: 'https://unjs.github.io/nitro-deploys/',
 }

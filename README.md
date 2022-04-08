@@ -8,3 +8,5 @@
 - **Azure Static Web Apps**: https://icy-pond-008be3f03.1.azurestaticapps.net/
 - **Firebase**: https://nitro-deployment.web.app/
 - **render.com**: https://nitro-deployment.onrender.com/
+- **Heroku**: https://nitro-deployment.herokuapp.com/
+- **Digital Ocean**: https://nitro-deployment-w5dzm.ondigitalocean.app/
