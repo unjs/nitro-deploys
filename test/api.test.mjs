@@ -9,6 +9,7 @@ const deployments = {
   cloudflare: 'https://nitro-deployment.pi0.workers.dev/',
   azure: 'https://icy-pond-008be3f03.1.azurestaticapps.net/',
   'azure-functions': 'https://nitro-deployment.azurewebsites.net/',
+  firebase: 'https://nitro-deployment.web.app/',
   // This is purely client-side
   // github: 'https://unjs.github.io/nitro-deploys/',
 }
