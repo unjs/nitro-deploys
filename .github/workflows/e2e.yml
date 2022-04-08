@@ -13,7 +13,7 @@ jobs:
   test_url:
     name: Test deployed site
     environment:
-      name: ${{ github.event.inputs.url || github.event.deployment.payload.web_url || github.event.deployment_status.target_url || 'All' }}
+      name: ${{ github.event.deployment.environment || 'Production' }}
       url: ${{ github.event.inputs.url || github.event.deployment.payload.web_url || github.event.deployment_status.target_url }}
     if: github.event.deployment_status.state == 'success' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
