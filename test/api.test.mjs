@@ -1,6 +1,7 @@
 import { $fetch } from 'ohmyfetch'
 import { ok } from 'assert'
 import { info, setFailed } from '@actions/core'
+import { joinURL } from 'ufo'
 
 const deployments = {
   vercel: 'https://nitro-deployment.vercel.app/',
@@ -20,7 +21,9 @@ const behaviour = async url => {
       'should fetch HTML'
     )
     ok(
-      await $fetch(url + 'api/hello').then(r => r.includes('Hello World!')),
+      await $fetch(joinURL(url, 'api/hello')).then(r =>
+        r.includes('Hello World!')
+      ),
       'should fetch API'
     )
   } catch (e) {
