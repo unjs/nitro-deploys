@@ -11,7 +11,10 @@ on:
 
 jobs:
   test_url:
-    name: ${{ github.event.inputs.url || github.event.deployment_status.target_url || 'Test deployed sites' }}
+    name: Test deployed site
+    environment:
+      name: ${{ github.event.deployment.environment || 'Production' }}
+      url: ${{ github.event.inputs.url || github.event.deployment.payload.web_url || github.event.deployment_status.target_url }}
     if: github.event.deployment_status.state == 'success' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
 
@@ -23,4 +26,4 @@ jobs:
       - run: yarn install
       - run: yarn test
         env:
-          DEPLOYMENT_URL: ${{ github.event.inputs.url || github.event.deployment_status.target_url }}
+          DEPLOYMENT_URL: ${{ github.event.inputs.url || github.event.deployment.payload.web_url || github.event.deployment_status.target_url }}
