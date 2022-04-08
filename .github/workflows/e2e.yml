@@ -11,7 +11,10 @@ on:
 
 jobs:
   test_url:
-    name: ${{ github.event.inputs.url || github.event.deployment.payload.web_url || github.event.deployment_status.target_url || 'Test deployed sites' }}
+    name: Test deployed site
+    environment:
+      name: ${{ github.event.inputs.url || github.event.deployment.payload.web_url || github.event.deployment_status.target_url || 'All' }}
+      url: ${{ github.event.inputs.url || github.event.deployment.payload.web_url || github.event.deployment_status.target_url }}
     if: github.event.deployment_status.state == 'success' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
 
