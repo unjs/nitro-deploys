@@ -5,9 +5,10 @@
     "dev": "nitro dev",
     "lint": "eslint --ext .ts .",
     "start": "node .output/server/index.mjs",
-    "test": "yarn lint"
+    "test": "node test/api.test.mjs"
   },
   "devDependencies": {
+    "@actions/core": "^1.6.0",
     "firebase-admin": "^10.0.2",
     "firebase-functions": "^3.20.0",
     "nitropack-edge": "^0.1.3-27489446.3498d7d"

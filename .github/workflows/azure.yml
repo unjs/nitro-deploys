@@ -31,3 +31,7 @@ jobs:
           app-name: nitro-deployment
           package: .output/deploy.zip
           publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
+      - name: Test deployed site
+        run: yarn test
+        env:
+          DEPLOYMENT_URL: https://nitro-deployment.azurewebsites.net/
