@@ -1,6 +1,4 @@
-import { defineNitroConfig } from 'nitropack-edge'
+import { defineNitroConfig } from 'nitropack'
 
 export default defineNitroConfig({
-  srcDir: 'src',
-  renderer: '~/app.ts'
 })
