@@ -4,15 +4,16 @@ import { info, setFailed } from '@actions/core'
 import { joinURL } from 'ufo'
 
 const deployments = {
-  vercel: 'https://nitro-deployment.vercel.app/',
-  netlify: 'https://nitro-deployment.netlify.app/',
-  cloudflare: 'https://nitro-deployment.pi0.workers.dev/',
+  // 'azure-functions': 'https://nitro-deployment.azurewebsites.net/',
   azure: 'https://icy-pond-008be3f03.1.azurestaticapps.net/',
-  'azure-functions': 'https://nitro-deployment.azurewebsites.net/',
-  firebase: 'https://nitro-deployment.web.app/',
-  render: 'https://nitro-deployment.onrender.com/',
-  heroku: 'https://nitro-deployment.herokuapp.com/',
+  cloudflare: 'https://nitro-deployment.pi0.workers.dev/',
   digitalocean: 'https://nitro-deployment-w5dzm.ondigitalocean.app/',
+  firebase: 'https://nitro-deployment.web.app/',
+  heroku: 'https://nitro-deployment.herokuapp.com/',
+  netlify: 'https://nitro-deployment.netlify.app/',
+  'netlify-edge': 'https://nitro-deployment-edge.netlify.app/',
+  render: 'https://nitro-deployment.onrender.com/',
+  vercel: 'https://nitro-deployment.vercel.app/',
   // This is purely client-side
   // github: 'https://unjs.github.io/nitro-deploys/',
 }
@@ -21,13 +22,11 @@ const behaviour = async url => {
   info(`testing ${url}`)
   try {
     ok(
-      await $fetch(url).then(r => r.includes('Welcome to nitro')),
+      await $fetch(url).then(r => r.includes('Nitro Test Deployment')),
       'should fetch HTML'
     )
     ok(
-      await $fetch(joinURL(url, 'api/hello')).then(r =>
-        r.includes('Hello World!')
-      ),
+      await $fetch(joinURL(url, 'api/hello')).then(r => r.api === 'Works'),
       'should fetch API'
     )
   } catch (e) {
