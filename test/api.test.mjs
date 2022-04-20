@@ -4,7 +4,7 @@ import { info, setFailed } from '@actions/core'
 import { joinURL } from 'ufo'
 
 const deployments = {
-  // 'azure-functions': 'https://nitro-deployment.azurewebsites.net/',
+  'azure-functions': 'https://nitro-deployment.azurewebsites.net/',
   azure: 'https://icy-pond-008be3f03.1.azurestaticapps.net/',
   cloudflare: 'https://nitro-deployment.pi0.workers.dev/',
   digitalocean: 'https://nitro-deployment-w5dzm.ondigitalocean.app/',
@@ -13,6 +13,7 @@ const deployments = {
   netlify: 'https://nitro-deployment.netlify.app/',
   'netlify-edge': 'https://nitro-deployment-edge.netlify.app/',
   render: 'https://nitro-deployment.onrender.com/',
+  stormkit: 'https://chilllunar-mnn7rl.stormkit.dev/',
   vercel: 'https://nitro-deployment.vercel.app/',
   // This is purely client-side
   // github: 'https://unjs.github.io/nitro-deploys/',
