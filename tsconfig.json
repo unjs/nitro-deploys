@@ -6,13 +6,12 @@
     "allowJs": true,
     "resolveJsonModule": true,
     "paths": {
-      "#nitro": [
-        "./node_modules/nitropack-edge/dist/runtime/index"
-      ]
+      "#nitro": ["./node_modules/nitropack/dist/runtime/index"]
     }
   },
   "include": [
     ".",
-    "./.nitro/types/nitro.d.ts"
-, ".vercel_build_output/vercel-test.mjs"  ]
+    "./.nitro/types/nitro.d.ts",
+    ".vercel_build_output/vercel-test.mjs"
+  ]
 }
