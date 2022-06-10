@@ -9,8 +9,8 @@
   },
   "devDependencies": {
     "@actions/core": "^1.8.2",
-    "firebase-admin": "^10.2.0",
-    "firebase-functions": "^3.21.1",
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^3.21.2",
     "nitropack": "^0.4.4"
   },
   "engines": {
