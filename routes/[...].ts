@@ -6,7 +6,7 @@ export default defineEventHandler(() => {
   <html lang="en">
     <head>
       <meta charset="utf-8">
-      <link rel="icon" type="image/x-icon" href="/favicon.ico">
+      <link rel="icon" href="/favicon.svg" />
       <title>Nitro Test Deployment</title>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico/css/pico.min.css">
     </head>
