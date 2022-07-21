@@ -25,7 +25,7 @@ jobs:
         env:
           NITRO_PRESET: service-worker
           NITRO_APP_BASE_URL: /nitro-deploys/
-      - uses: JamesIves/github-pages-deploy-action@v4.3.4
+      - uses: JamesIves/github-pages-deploy-action@v4.4.0
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
