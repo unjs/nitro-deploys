@@ -20,7 +20,7 @@ jobs:
         env:
           NITRO_PRESET: firebase
       - name: Deploy to Firebase
-        uses: w9jds/firebase-action@v2.2.2
+        uses: w9jds/firebase-action@v11.5.0
         with:
           args: deploy --project nitro-deployment
         env:
