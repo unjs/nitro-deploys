@@ -8,10 +8,10 @@
     "test": "node test/api.test.mjs"
   },
   "devDependencies": {
-    "@actions/core": "^1.9.0",
+    "@actions/core": "^1.9.1",
     "firebase-admin": "^10.3.0",
     "firebase-functions": "^3.22.0",
-    "nitropack": "^0.4.9"
+    "nitropack": "^0.4.24"
   },
   "engines": {
     "node": "14.x || >=16.x"
