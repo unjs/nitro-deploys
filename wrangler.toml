@@ -4,11 +4,11 @@ account_id = "8ea39dfb7bb411de7fcff5444d7a5dbb"
 workers_dev = true
 route = ""
 zone_id = ""
-compatibility_date = "2022-04-07"
+compatibility_date = "2022-09-10"
+main=".output/server/index.mjs"
 
 [site]
 bucket = "./.output/public"
-entry-point = "./.output"
 
 [build]
 command = "true"
