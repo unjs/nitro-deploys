@@ -1,15 +1,8 @@
 name = "nitro-deployment"
-type = "javascript"
 account_id = "8ea39dfb7bb411de7fcff5444d7a5dbb"
+main = "./.output/server/index.mjs"
 workers_dev = true
-route = ""
-zone_id = ""
 compatibility_date = "2022-04-07"
 
 [site]
-bucket = "./.output/public"
-entry-point = "./.output"
-
-[build]
-command = "true"
-upload.format = "service-worker"
+bucket = ".output/public"
