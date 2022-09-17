@@ -776,10 +776,10 @@ bytes@3.1.2:
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.1.2.tgz#8b0beeb98605adf1b128fa4386403c009e0221a5"
   integrity sha512-/Nf7TyzTx6S3yRJObOAV7956r8cr2+Oj8AC5dt8wSP3BQAoeX58NoHyCU8P8zGkNXStjTSi6fzO6F0pBdcYbEg==
 
-c12@^0.2.11:
-  version "0.2.11"
-  resolved "https://registry.yarnpkg.com/c12/-/c12-0.2.11.tgz#ffb9048fd4241e948c1793097f2550248ecb1789"
-  integrity sha512-DOy85AO8HN66IgqCDUmMrLb+r4/z8f8Cu8oUIfERbzi/vxZ/GS99SU7lIMz0EQgJktZp6FtcisuiyCdQ6VaTTQ==
+c12@^0.2.12:
+  version "0.2.12"
+  resolved "https://registry.yarnpkg.com/c12/-/c12-0.2.12.tgz#fa6cfebff3553e139f323dab8ac8ae8e5eebc237"
+  integrity sha512-Oq+XDrx2luek30VrWU0QXrvPbILAp8fDVgprRvhP4WL4CZaSqE7CNHIhq1R824YSkMVUOfMjsZFRcVqs7I2Xxg==
   dependencies:
     defu "^6.1.0"
     dotenv "^16.0.2"
@@ -2458,10 +2458,10 @@ negotiator@0.6.3:
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.3.tgz#58e323a72fedc0d6f9cd4d31fe49f51479590ccd"
   integrity sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==
 
-nitropack@^0.5.2:
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/nitropack/-/nitropack-0.5.2.tgz#56c0d9c7f1d1f423d79ed717b287596f2ed949f5"
-  integrity sha512-VXLxM5e6Fnkj8XPT9WHIPAKo1PRFr9zlLtE1Rhu8N1p9BCyTtFvXXQpOJeeTXrjYYUsFqlBlzQof+tCc0TfeTg==
+nitropack@^0.5.3:
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/nitropack/-/nitropack-0.5.3.tgz#03c1cfd82467308d297b94b339140145febdc112"
+  integrity sha512-X54AQOAUDwuegwMaiVsWGUpG7kgOVlwUnbV9fIo4sClmwU7zmTblmM+NhiioC06r/Z5OKKM8Bj+vmIL52GBejg==
   dependencies:
     "@cloudflare/kv-asset-handler" "^0.2.0"
     "@netlify/functions" "^1.2.0"
@@ -2475,7 +2475,7 @@ nitropack@^0.5.2:
     "@rollup/pluginutils" "^4.2.1"
     "@vercel/nft" "^0.22.1"
     archiver "^5.3.1"
-    c12 "^0.2.11"
+    c12 "^0.2.12"
     chalk "^5.0.1"
     chokidar "^3.5.3"
     consola "^2.15.3"
