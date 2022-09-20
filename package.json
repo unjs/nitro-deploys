@@ -11,7 +11,7 @@
     "@actions/core": "^1.9.1",
     "firebase-admin": "^10.3.0",
     "firebase-functions": "^3.23.0",
-    "nitropack": "^0.5.3"
+    "nitropack": "^0.5.4"
   },
   "engines": {
     "node": "14.x || >=16.x"
