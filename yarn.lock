@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@actions/core@^1.9.1":
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/@actions/core/-/core-1.9.1.tgz#97c0201b1f9856df4f7c3a375cdcdb0c2a2f750b"
-  integrity sha512-5ad+U2YGrmmiw6du20AQW5XuWo7UKN2052FjSV7MX+Wfjf8sCqcsZe62NfgHys4QI4/Y+vQvLKYL8jWtA1ZBTA==
+"@actions/core@^1.10.0":
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/@actions/core/-/core-1.10.0.tgz#44551c3c71163949a2f06e94d9ca2157a0cfac4f"
+  integrity sha512-2aZDDa3zrrZbP5ZYg159sNoLRb61nQ7awl5pSvIq5Qpj81vwDzdMRKzkWJGJuwVvWpvZKx7vspJALyvaaIQyug==
   dependencies:
     "@actions/http-client" "^2.0.1"
     uuid "^8.3.2"
@@ -1491,10 +1491,10 @@ firebase-admin@^10.3.0:
     "@google-cloud/firestore" "^4.15.1"
     "@google-cloud/storage" "^5.18.3"
 
-firebase-functions@^3.23.0:
-  version "3.23.0"
-  resolved "https://registry.yarnpkg.com/firebase-functions/-/firebase-functions-3.23.0.tgz#ac8da127ff3e97c354f3cd740a71534572d1f4ca"
-  integrity sha512-/jujnNChTWIuoXK3IPNGYu1zjXF1fYRy88uYbkrJhs3dhK6EdXZi0rX6JUEOCB7h6IkRQvbio+bvtaoI7h+4Lg==
+firebase-functions@^3.24.0:
+  version "3.24.0"
+  resolved "https://registry.yarnpkg.com/firebase-functions/-/firebase-functions-3.24.0.tgz#3fb1abc2412a37126cee528f4e83c85c9a76e3a8"
+  integrity sha512-YKZm/AxjnWTP9VbxAyjs7ImWfMydleQAiHB2T6li3imRCcwC4+h6BXU/Jf2uELz9AkCb+UabWbdVrklk3b+70Q==
   dependencies:
     "@types/cors" "^2.8.5"
     "@types/express" "4.17.3"
