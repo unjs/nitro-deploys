@@ -1,4 +1,4 @@
-name: Firebase
+name: firebase
 
 on:
   push:
@@ -7,16 +7,17 @@ on:
       - firebase
 
 jobs:
-  build_and_preview:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - run: corepack enable
       - uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node }}
-          cache: yarn
-      - run: yarn install
-      - run: yarn build
+          node-version: 18
+          cache: pnpm
+      - run: pnpm install
+      - run: pnpm build
         env:
           NITRO_PRESET: firebase
       - name: Deploy to Firebase
@@ -26,6 +27,6 @@ jobs:
         env:
           GCP_SA_KEY: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_NITRO_DEPLOYMENT }}"
       - name: Test deployed site
-        run: yarn test
+        run: pnpm test
         env:
           DEPLOYMENT_URL: https://nitro-deployment.web.app/

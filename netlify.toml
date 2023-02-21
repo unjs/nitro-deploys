@@ -6,7 +6,7 @@
   targetPort = 3000
 
 [build]
-  command = "yarn build"
+  command = "pnpm build"
   publish = "dist"
   functions = ".output/server"
 

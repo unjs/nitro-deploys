@@ -4,30 +4,26 @@ on:
   push:
     branches:
       - main
+      - cloudflare
 
 jobs:
   deploy:
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        node: [16]
-
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - run: corepack enable
       - uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node }}
-          cache: yarn
-      - run: yarn install
-      - run: yarn build
+          node-version: 18
+          cache: pnpm
+      - run: pnpm install
+      - run: pnpm build
         env:
           NITRO_PRESET: cloudflare
       - uses: cloudflare/wrangler-action@2.0.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
       - name: Test deployed site
-        run: yarn test
+        run: pnpm test
         env:
           DEPLOYMENT_URL: https://nitro-deployment.pi0.workers.dev/

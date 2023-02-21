@@ -1,13 +1,15 @@
-name: Azure Static Web Apps CI/CD
+name: azure-static
 
 on:
   push:
     branches:
       - main
+      - azure-static
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
       - main
+      - azure-static
 
 jobs:
   build_and_deploy_job:
@@ -33,7 +35,7 @@ jobs:
           ###### End of Repository/Build Configurations ######
       - name: Test deployed site
         if: github.event_name == 'push'
-        run: yarn test
+        run: pnpm test
         env:
           DEPLOYMENT_URL: https://icy-pond-008be3f03.1.azurestaticapps.net/
 

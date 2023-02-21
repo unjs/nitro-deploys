@@ -20,10 +20,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - run: corepack enable
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
-      - run: yarn install
-      - run: yarn test
+          node-version: 18
+          cache: pnpm
+      - run: pnpm install
+      - run: pnpm test
         env:
           DEPLOYMENT_URL: ${{ github.event.inputs.url || github.event.deployment.payload.web_url || github.event.deployment_status.target_url }}

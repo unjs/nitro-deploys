@@ -4,24 +4,20 @@ on:
   push:
     branches:
       - main
+      - gh-pages
 
 jobs:
   deploy:
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-        os: [ ubuntu-latest ]
-        node: [ 16 ]
-
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - run: corepack enable
       - uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node }}
-          cache: yarn
-      - run: yarn install
-      - run: yarn build
+          node-version: 18
+          cache: pnpm
+      - run: pnpm install
+      - run: pnpm build
         env:
           NITRO_PRESET: service-worker
           NITRO_APP_BASE_URL: /nitro-deploys/
