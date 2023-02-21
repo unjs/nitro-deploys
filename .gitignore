@@ -1,12 +1,10 @@
 node_modules
-
 .nitro
 .output
 dist
-
+!public/dist
 *.log*
 
 .vercel
 .netlify
 .vercel_build_output
-
