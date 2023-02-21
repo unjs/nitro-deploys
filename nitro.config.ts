@@ -1,7 +1,11 @@
 import { defineNitroConfig } from 'nitropack'
+import nitroPkg from 'nitropack/package.json'
 
 export default defineNitroConfig({
   renderer: './renderer',
+  runtimeConfig: {
+    nitroVersion: nitroPkg.version
+  },
   publicAssets: [
     {
       baseURL: '/dist',

@@ -5,6 +5,7 @@
     "moduleResolution": "Node",
     "allowJs": true,
     "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
     "paths": {
       "#nitro": [
         "./node_modules/nitropack-edge/dist/runtime/index"
