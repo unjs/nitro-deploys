@@ -1,3 +1,8 @@
+import { withBase } from "ufo"
+
+const { baseURL } = useRuntimeConfig().app
+const url = p => withBase(p, baseURL)
+
 export default defineRenderHandler((event) => {
   const links = [
     '/route',
@@ -13,18 +18,18 @@ export default defineRenderHandler((event) => {
   <title>Nitro Test Deployment</title>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="/dist/tailwind@3.2.6.js"></script>
+  <script src="${url('/dist/tailwind@3.2.6.js')}"></script>
 </head>
 
 <body class="bg-yellow-600">
   <div class="flex justify-center items-center h-screen">
     <div class="bg-yellow-700 text-white p-8 rounded-lg">
       <h1 class="text-4xl font-bold mb-4">
-        <a href="/">🐣 Nitro Test Deployment</a>
+        <a href="${url('/')}">🐣 Nitro Test Deployment</a>
       </h1>
       <div class="mb-3">
         <ul>
-          ${links.map(link => html` <li><a href="${link}" class="underline">${link}</a></li>`).join('\n')}
+          ${links.map(link => html` <li><a href="${url(link)}" class="underline">${link}</a></li>`).join('\n')}
         </ul>
         Current route: ${ event.path }
       </div>
