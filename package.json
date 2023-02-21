@@ -12,7 +12,8 @@
     "eslint-config-unjs": "^0.1.0",
     "firebase-admin": "^11.5.0",
     "firebase-functions": "^4.2.1",
-    "nitropack": "npm:nitropack-edge@^2.3.0-27949720.e47ffa0"
+    "nitropack": "npm:nitropack-edge@^2.3.0-27949720.e47ffa0",
+    "ofetch": "^1.0.1"
   },
   "engines": {
     "node": "14.x || >=16.x"

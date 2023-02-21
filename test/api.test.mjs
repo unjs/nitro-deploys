@@ -1,4 +1,4 @@
-import { $fetch } from 'ohmyfetch'
+import { $fetch } from 'ofetch'
 import { ok } from 'assert'
 import { info, setFailed } from '@actions/core'
 import { joinURL } from 'ufo'
