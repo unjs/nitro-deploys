@@ -26,4 +26,5 @@ jobs:
         run: mkdir -p ~/.lagon && echo \{\"token\":\"${LAGON_TOKEN}\",\"site_url\":\"https://dash.lagon.app\"\} > ~/.lagon/config.json
         env:
           LAGON_TOKEN: ${{ secrets.LAGON_TOKEN }}
-      - run: npx -p esbuild -p @lagon/cli@latest lagon deploy .output && lagon ls .output
+      - name: Lagon deploy
+        run: npx lagon deploy .output
