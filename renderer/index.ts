@@ -19,7 +19,7 @@ const deployments = [
   { name: 'Heroku', url: 'https://nitro-deployment.herokuapp.com/' },
   { name: 'Netlify Functions', url: 'https://nitro-deployment.netlify.app/' },
   { name: 'Netflify Edge', url: 'https://nitro-deployment-edge.netlify.app/' },
-  { name: 'Render.com', url: 'https://nitro-deployment.onrender.com/' },
+  { name: 'Render.com', url: 'https://nitro-app.onrender.com/' },
   { name: 'Stormkit', url: 'https://scourgebrick-ppmy24.stormkit.dev/' },
   { name: 'Vercel', url: 'https://nitro-deploys.vercel.app' },
 ].sort((a, b) => a.name.localeCompare(b.name))
