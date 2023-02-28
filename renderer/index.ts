@@ -13,7 +13,7 @@ const deployments = [
   { name: 'Azure Functions', url: 'https://nitro-deployment.azurewebsites.net/' },
   { name: 'Azure Static', url: 'https://icy-pond-008be3f03.1.azurestaticapps.net/' },
   { name: 'Cloudflare Workers', url: 'https://nitro-deployment.pi0.workers.dev/' },
-  { name: 'DigitalOcean', url: 'https://nitro-deployment-w5dzm.ondigitalocean.app/' },
+  { name: 'DigitalOcean', url: 'https://nitro-app.ondigitalocean.app/' },
   { name: 'Firebase Hosting', url: 'https://nitro-deployment.web.app/' },
   { name: 'Github Pages', url: 'https://unjs.github.io/nitro-deploys/' },
   { name: 'Heroku', url: 'https://nitro-app.herokuapp.com/' },
