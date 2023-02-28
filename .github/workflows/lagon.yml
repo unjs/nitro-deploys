@@ -27,4 +27,4 @@ jobs:
         env:
           LAGON_TOKEN: ${{ secrets.LAGON_TOKEN }}
       - name: Lagon deploy
-        run: npx lagon deploy .output
+        run: npx lagon deploy --prod .output
