@@ -10,16 +10,16 @@ const routes = [
 ]
 
 const deployments = [
-  { name: 'Azure Functions', url: 'https://nitro-deployment.azurewebsites.net/' },
+  // { name: 'Azure Functions', url: 'https://nitro-deployment.azurewebsites.net/' },
   { name: 'Azure Static', url: 'https://icy-pond-008be3f03.1.azurestaticapps.net/' },
   { name: 'Cloudflare Workers', url: 'https://nitro-deployment.pi0.workers.dev/' },
-  { name: 'DigitalOcean', url: 'https://nitro-app.ondigitalocean.app/' },
+  { name: 'DigitalOcean', url: 'https://nitro-app-nom5n.ondigitalocean.app/' },
   { name: 'Firebase Hosting', url: 'https://nitro-web-app.web.app/' },
   { name: 'Github Pages', url: 'https://unjs.github.io/nitro-deploys/' },
   { name: 'Heroku', url: 'https://nitro-app.herokuapp.com/' },
   { name: 'Lagon', url: 'https://nitro-app.lagon.dev/' },
   { name: 'Netlify Functions', url: 'https://nitro-deployment.netlify.app/' },
-  { name: 'Netflify Edge', url: 'https://nitro-deployment-edge.netlify.app/' },
+  // { name: 'Netflify Edge', url: 'https://nitro-deployment-edge.netlify.app/' },
   { name: 'Render.com', url: 'https://nitro-app.onrender.com/' },
   { name: 'Stormkit', url: 'https://scourgebrick-ppmy24.stormkit.dev/' },
   { name: 'Vercel', url: 'https://nitro-app.vercel.app' },
