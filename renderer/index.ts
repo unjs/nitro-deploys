@@ -36,7 +36,7 @@ export default defineRenderHandler((event) => {
   <title>Nitro Test Deployment</title>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="${url('/dist/tailwind@3.2.6.js')}"></script>
+  <script src="${url('/_dist/tailwind@3.2.6.js')}"></script>
 </head>
 
 <body class="bg-yellow-600">
