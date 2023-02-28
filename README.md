@@ -8,7 +8,7 @@ Learn more about Nitro deployment: https://nitro.unjs.io/deploy/
 - **Digital Ocean**: [Digital Ocean](https://nitro-deployment-w5dzm.ondigitalocean.app/) | [Docs](https://nitro.unjs.io/deploy/providers/digitalocean.html)
 - **Firebase**: [Deployment](https://nitro-deployment.web.app/) | [Docs](https://nitro.unjs.io/deploy/providers/firebase.html)
 - **Github Pages** (Service Worker): [Deployment](https://unjs.github.io/nitro-deploys/) | [Docs](#)
-- **Heroku**: [Deployment](https://nitro-deployment.herokuapp.com/) | [Docs](https://nitro.unjs.io/deploy/providers/heroku.html)
+- **Heroku**: [Deployment](https://nitro-app.herokuapp.com/) | [Docs](https://nitro.unjs.io/deploy/providers/heroku.html)
 - **Netlify Functions**: [Deployment](https://nitro-deployment.netlify.app) | [Docs](https://nitro.unjs.io/deploy/providers/netlify.html)
 - **Netlify Edge**: [Deployment](https://nitro-deployment-edge.netlify.app/) | [Docs](https://nitro.unjs.io/deploy/providers/netlify.html)
 - **render.com**: [Deployment](https://nitro-app.onrender.com/) | [Docs](https://nitro.unjs.io/deploy/providers/render.html)

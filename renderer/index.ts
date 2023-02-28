@@ -16,7 +16,7 @@ const deployments = [
   { name: 'DigitalOcean', url: 'https://nitro-deployment-w5dzm.ondigitalocean.app/' },
   { name: 'Firebase Hosting', url: 'https://nitro-deployment.web.app/' },
   { name: 'Github Pages', url: 'https://unjs.github.io/nitro-deploys/' },
-  { name: 'Heroku', url: 'https://nitro-deployment.herokuapp.com/' },
+  { name: 'Heroku', url: 'https://nitro-app.herokuapp.com/' },
   { name: 'Netlify Functions', url: 'https://nitro-deployment.netlify.app/' },
   { name: 'Netflify Edge', url: 'https://nitro-deployment-edge.netlify.app/' },
   { name: 'Render.com', url: 'https://nitro-app.onrender.com/' },
