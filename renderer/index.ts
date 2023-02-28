@@ -21,7 +21,8 @@ const deployments = [
   { name: 'Netflify Edge', url: 'https://nitro-deployment-edge.netlify.app/' },
   { name: 'Render.com', url: 'https://nitro-app.onrender.com/' },
   { name: 'Stormkit', url: 'https://scourgebrick-ppmy24.stormkit.dev/' },
-  { name: 'Vercel', url: 'https://nitro-deploys.vercel.app' },
+  { name: 'Vercel', url: 'https://nitro-app.vercel.app' },
+  { name: 'Vercel Edge', url: 'https://nitro-app-edge.vercel.app' },
 ].sort((a, b) => a.name.localeCompare(b.name))
 
 export default defineRenderHandler((event) => {

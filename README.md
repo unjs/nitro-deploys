@@ -13,4 +13,5 @@ Learn more about Nitro deployment: https://nitro.unjs.io/deploy/
 - **Netlify Edge**: [Deployment](https://nitro-deployment-edge.netlify.app/) | [Docs](https://nitro.unjs.io/deploy/providers/netlify)
 - **render.com**: [Deployment](https://nitro-app.onrender.com/) | [Docs](https://nitro.unjs.io/deploy/providers/render)
 - **stormkit**: [Deployment](https://scourgebrick-ppmy24.stormkit.dev/) | [Docs](https://nitro.unjs.io/deploy/providers/stormkit)
-- **Vercel**: [Deployment](https://nitro-deployment.vercel.app) | [Docs](https://nitro.unjs.io/deploy/providers/vercel)
+- **Vercel**: [Deployment](https://nitro-app.vercel.app) | [Docs](https://nitro.unjs.io/deploy/providers/vercel)
+- **Vercel Edge**: [Deployment](https://nitro-app-edge.vercel.app) | [Docs](https://nitro.unjs.io/deploy/providers/vercel)
