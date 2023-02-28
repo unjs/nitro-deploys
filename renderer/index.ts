@@ -17,6 +17,7 @@ const deployments = [
   { name: 'Firebase Hosting', url: 'https://nitro-web-app.web.app/' },
   { name: 'Github Pages', url: 'https://unjs.github.io/nitro-deploys/' },
   { name: 'Heroku', url: 'https://nitro-app.herokuapp.com/' },
+  { name: 'Lagon', url: 'https://nitro-app.lagon.dev/' },
   { name: 'Netlify Functions', url: 'https://nitro-deployment.netlify.app/' },
   { name: 'Netflify Edge', url: 'https://nitro-deployment-edge.netlify.app/' },
   { name: 'Render.com', url: 'https://nitro-app.onrender.com/' },
@@ -36,7 +37,7 @@ export default defineRenderHandler((event) => {
   <title>Nitro Test Deployment</title>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="${url('/dist/tailwind@3.2.6.js')}"></script>
+  <script src="${url('/_dist/tailwind@3.2.6.js')}"></script>
 </head>
 
 <body class="bg-yellow-600">

@@ -8,8 +8,8 @@ export default defineNitroConfig({
   },
   publicAssets: [
     {
-      baseURL: '/dist',
-      dir: './public/dist',
+      baseURL: '/_dist',
+      dir: './public/_dist',
       maxAge: 60 * 60 * 24 * 365
     }
   ]
