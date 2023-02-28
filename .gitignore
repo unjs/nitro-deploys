@@ -8,3 +8,4 @@ dist
 .vercel
 .netlify
 .vercel_build_output
+.firebase

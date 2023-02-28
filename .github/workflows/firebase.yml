@@ -7,10 +7,10 @@ on:
       - firebase
 
 jobs:
-  deploy:
+  build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       - run: corepack enable
       - uses: actions/setup-node@v3
         with:
@@ -20,13 +20,9 @@ jobs:
       - run: pnpm build
         env:
           NITRO_PRESET: firebase
-      - name: Deploy to Firebase
-        uses: w9jds/firebase-action@v11.22.0
+      - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          args: deploy --project nitro-deployment
-        env:
-          GCP_SA_KEY: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_NITRO_DEPLOYMENT }}"
-      - name: Test deployed site
-        run: pnpm test
-        env:
-          DEPLOYMENT_URL: https://nitro-deployment.web.app/
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_NITRO_WEB_APP }}'
+          channelId: live
+          projectId: nitro-web-app

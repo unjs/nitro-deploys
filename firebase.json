@@ -1,8 +1,10 @@
 {
-  "functions": { "source": ".output/server" },
+  "functions": {
+    "source": ".output/server"
+  },
   "hosting": [
     {
-      "site": "nitro-deployment",
+      "site": "nitro-web-app",
       "public": ".output/public",
       "cleanUrls": true,
       "rewrites": [
