@@ -31,7 +31,7 @@ export default defineNitroPreset({
   },
   rollupConfig: {
     output: {
-      entryFileNames: "_workers.js",
+      entryFileNames: "_worker.js",
       format: "esm",
     },
   },
@@ -61,8 +61,8 @@ export default defineNitroPreset({
         absolute: false,
         dot: true,
         ignore: [
-          '_workers.js',
-          '_workers.js.map',
+          '_worker.js',
+          '_worker.js.map',
           ...explicitPublicAssets.map((dir) =>
             withoutLeadingSlash(joinURL(dir.baseURL, "**"))
           ),
