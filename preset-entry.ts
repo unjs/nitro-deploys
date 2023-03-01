@@ -20,6 +20,14 @@ interface CFRequestContext {
 
 export default {
   async fetch(request, env, context) {
+    const url = new URL(request.url);
+    if (url.pathname === '/_info') {
+      return new Response(JSON.stringify({
+        request: Object.keys(request),
+        env: Object.keys(env),
+        context: Object.keys(context),
+      }, null, 2))
+    }
     return onRequest({ request, env, ...context })
   },
 }
