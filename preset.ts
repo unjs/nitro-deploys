@@ -38,13 +38,13 @@ export default defineNitroPreset({
 
 async function linkToDist(nitro: Nitro) {
   // Make symlink to dist for compatibility with zero config
-  const cfOutDir = nitro.options.output.serverDir
+  const buildDir = nitro.options.output.serverDir
   const distDir = resolve(nitro.options.rootDir, 'dist')
-  const distStat = await fsp.stat(distDir).catch(() => { })
+  const distStat = await fsp.lstat(distDir).catch(() => { })
   if (!distStat || distStat.isSymbolicLink()) {
-    await fsp.unlink(distDir).catch(() => { })
+    await fsp.unlink(distDir).catch(() => {})
     await fsp.symlink(
-      relative(dirname(distDir), cfOutDir),
+      buildDir, // relative(dirname(distDir), buildDir),
       distDir,
     'junction').catch(() => { })
   }
