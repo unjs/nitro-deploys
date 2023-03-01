@@ -43,10 +43,7 @@ async function linkToDist(nitro: Nitro) {
   const distStat = await fsp.lstat(distDir).catch(() => { })
   if (!distStat || distStat.isSymbolicLink()) {
     await fsp.unlink(distDir).catch(() => {})
-    await fsp.symlink(
-      buildDir, // relative(dirname(distDir), buildDir),
-      distDir,
-    'junction').catch(() => { })
+    await fsp.symlink(buildDir, distDir).catch(() => { })
   }
 }
 
