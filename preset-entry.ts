@@ -1,29 +1,25 @@
 import "#internal/nitro/virtual/polyfill";
 import { requestHasBody } from "#internal/nitro/utils";
 import { nitroApp } from "#internal/nitro/app";
-import { isPublicAssetURL, getPublicAssetMeta } from "#internal/nitro/virtual/public-assets";
+import { isPublicAssetURL } from "#internal/nitro/virtual/public-assets";
+import type { Request as CFRequest, EventContext } from '@cloudflare/workers-types';
 
-/** @see https://developers.cloudflare.com/pages/platform/functions/#writing-your-first-function */
-interface CFRequestContext {
-  /** same as existing Worker API */
-  request: any;
-  /** same as existing Worker API */
-  env: any;
-  /** if filename includes [id] or [[path]] **/
-  params: any;
-  /** Same as ctx.waitUntil in existing Worker API */
-  waitUntil: any;
-  /** Used for middleware or to fetch assets */
-  next: any;
-  /** Arbitrary space for passing data between middlewares */
-  data: any;
+/**
+ * Reference: https://developers.cloudflare.com/workers/runtime-apis/fetch-event/#parameters
+ */
+
+interface CFPagesEnv {
+  ASSETS: { fetch: (request: CFRequest) => Promise<Response> };
+  CF_PAGES: "1";
+  CF_PAGES_BRANCH: string;
+  CF_PAGES_COMMIT_SHA: string;
+  CF_PAGES_URL: string;
+  [key: string]: any
 }
 
 export default {
-  async fetch(request, env, context) {
+  async fetch(request: CFRequest, env: CFPagesEnv, context: EventContext<CFPagesEnv, string, any>) {
     const url = new URL(request.url);
-    console.log({ request, env, context })
-
     if (isPublicAssetURL(url.pathname)) {
       return env.ASSETS.fetch(request);
     }
@@ -33,29 +29,13 @@ export default {
       body = Buffer.from(await request.arrayBuffer());
     }
 
-    const r = await nitroApp.localCall({
+    return nitroApp.localFetch({
       url: url.pathname + url.search,
-      method: request.method,
-      headers: request.headers,
       host: url.hostname,
       protocol: url.protocol,
+      method: request.method,
+      headers: request.headers,
       body,
     });
-
-    return new Response(r.body, {
-      // @ts-ignore TODO: Should be HeadersInit instead of string[][]
-      headers: normalizeOutgoingHeaders(r.headers),
-      status: r.status,
-      statusText: r.statusText,
-    });
   },
-}
-
-function normalizeOutgoingHeaders(
-  headers: Record<string, string | string[] | undefined>
-) {
-  return Object.entries(headers).map(([k, v]) => [
-    k,
-    Array.isArray(v) ? v.join(",") : v,
-  ]);
 }

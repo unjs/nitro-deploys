@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@actions/core": "^1.10.0",
+    "@cloudflare/workers-types": "^4.20230228.0",
     "@lagon/cli": "^0.5.2",
     "esbuild": "^0.17.10",
     "eslint-config-unjs": "^0.1.0",
