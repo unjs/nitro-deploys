@@ -1,7 +1,7 @@
 import "#internal/nitro/virtual/polyfill";
 import { requestHasBody } from "#internal/nitro/utils";
 import { nitroApp } from "#internal/nitro/app";
-import { isPublicAssetURL } from "#internal/nitro/virtual/public-assets";
+import { isPublicAssetURL, getPublicAssetMeta } from "#internal/nitro/virtual/public-assets";
 
 /** @see https://developers.cloudflare.com/pages/platform/functions/#writing-your-first-function */
 interface CFRequestContext {
@@ -30,8 +30,9 @@ export default {
       }, null, 2))
     }
 
-    if (isPublicAssetURL(url)) {
-      return env.ASSETS.fetch(request);
+    if (isPublicAssetURL(url.pathname)) {
+      return new Response(getPublicAssetMeta(url.pathname))
+      // return env.ASSETS.fetch(request);
     }
 
     let body;
