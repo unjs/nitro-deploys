@@ -29,8 +29,7 @@ export default {
       body = Buffer.from(await request.arrayBuffer());
     }
 
-    return nitroApp.localFetch({
-      url: url.pathname + url.search,
+    return nitroApp.localFetch(url.pathname + url.search, {
       host: url.hostname,
       protocol: url.protocol,
       method: request.method,
