@@ -15,6 +15,16 @@ export default defineNitroConfig({
       maxAge: 60 * 60 * 24 * 365
     },
     {
+      baseURL: '/.assets',
+      dir: './public/assets',
+      maxAge: 60 * 60 * 24 * 365
+    },
+    {
+      baseURL: '/_assets',
+      dir: './public/assets',
+      maxAge: 60 * 60 * 24 * 365
+    },
+    {
       baseURL: '/_dist',
       dir: './public/_dist',
       maxAge: 60 * 60 * 24 * 365
