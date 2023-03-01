@@ -15,13 +15,14 @@ interface CloudflarePagesRoutes {
 
 export default defineNitroPreset({
   extends: "cloudflare",
-  entry: "#internal/nitro/entries/cloudflare-pages",
+  entry: require.resolve('./preset-entry.ts'),
   commands: {
     preview: "npx wrangler pages dev .output/public",
     deploy: "npx wrangler pages publish .output/public",
   },
   output: {
-    serverDir: "{{ rootDir }}/functions",
+    publicDir: "{{ output.dir }}",
+    serverDir: "{{ output.dir }}",
   },
   alias: {
     // Hotfix: Cloudflare appends /index.html if mime is not found and things like ico are not in standard lite.js!
@@ -30,22 +31,12 @@ export default defineNitroPreset({
   },
   rollupConfig: {
     output: {
-      entryFileNames: "path.js",
+      entryFileNames: "_workers.js",
       format: "esm",
     },
   },
   hooks: {
     async compiled(nitro: Nitro) {
-      console.log('Our hook...')
-      await fse.move(
-        resolve(nitro.options.output.serverDir, "path.js"),
-        resolve(nitro.options.output.serverDir, "[[path]].js")
-      );
-      await fse.move(
-        resolve(nitro.options.output.serverDir, "path.js.map"),
-        resolve(nitro.options.output.serverDir, "[[path]].js.map")
-      );
-
       const routes: CloudflarePagesRoutes = {
         version: 1,
         include: ["/*"],
@@ -82,7 +73,6 @@ export default defineNitroPreset({
       // Only allow 100 rules in total (include + exclude)
       routes.exclude.splice(100 - routes.include.length);
 
-      console.log('Will write routes to file...', nitro.options.output.publicDir, "_routes.json", JSON.stringify(routes, undefined, 2))
       await fse.writeFile(
         resolve(nitro.options.output.publicDir, "_routes.json"),
         JSON.stringify(routes, undefined, 2)
