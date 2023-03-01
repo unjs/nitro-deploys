@@ -21,8 +21,8 @@ export default defineNitroPreset({
     deploy: "npx wrangler pages publish .output/public",
   },
   output: {
-    publicDir: "{{ output.dir }}",
-    serverDir: "{{ output.dir }}",
+    publicDir: "{{ output.dir }}/pages",
+    serverDir: "{{ output.dir }}/pages",
   },
   alias: {
     // Hotfix: Cloudflare appends /index.html if mime is not found and things like ico are not in standard lite.js!
@@ -61,6 +61,8 @@ export default defineNitroPreset({
         absolute: false,
         dot: true,
         ignore: [
+          '_workers.js',
+          '_workers.js.map',
           ...explicitPublicAssets.map((dir) =>
             withoutLeadingSlash(joinURL(dir.baseURL, "**"))
           ),
