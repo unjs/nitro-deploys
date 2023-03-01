@@ -3,6 +3,8 @@ import nitroPkg from 'nitropack/package.json'
 
 export default defineNitroConfig({
   renderer: './renderer',
+  preset: 'cloudflare-pages',
+  extends: './preset.ts',
   runtimeConfig: {
     nitroVersion: nitroPkg.version
   },
