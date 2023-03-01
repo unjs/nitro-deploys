@@ -22,17 +22,10 @@ interface CFRequestContext {
 export default {
   async fetch(request, env, context) {
     const url = new URL(request.url);
-    if (url.pathname === '/_info') {
-      return new Response(JSON.stringify({
-        request: request.toString(),
-        env: env.toString(),
-        context: context.toString(),
-      }, null, 2))
-    }
+    console.log({ request, env, context })
 
     if (isPublicAssetURL(url.pathname)) {
-      return new Response(getPublicAssetMeta(url.pathname))
-      // return env.ASSETS.fetch(request);
+      return env.ASSETS.fetch(request);
     }
 
     let body;
