@@ -1,6 +1,7 @@
 import "#internal/nitro/virtual/polyfill";
 import { requestHasBody } from "#internal/nitro/utils";
 import { nitroApp } from "#internal/nitro/app";
+import { isPublicAssetURL } from "#internal/nitro/virtual/public-assets";
 
 /** @see https://developers.cloudflare.com/pages/platform/functions/#writing-your-first-function */
 interface CFRequestContext {
@@ -23,54 +24,37 @@ export default {
     const url = new URL(request.url);
     if (url.pathname === '/_info') {
       return new Response(JSON.stringify({
-        request: Object.keys(request),
-        env: Object.keys(env),
-        context: Object.keys(context),
+        request: request.toString(),
+        env: env.toString(),
+        context: context.toString(),
       }, null, 2))
     }
-    return onRequest({ request, env, ...context })
-  },
-}
 
-async function onRequest(ctx: CFRequestContext) {
-  try {
-    // const asset = await env.ASSETS.fetch(request, { cacheControl: assetsCacheControl })
-    if (ctx.request.method === "GET") {
-      const asset = await ctx.next();
-      if (asset.status !== 404) {
-        return asset;
-      }
+    if (isPublicAssetURL(url)) {
+      return env.ASSETS.fetch(request);
     }
-  } catch (err) {
-    console.error('Error serving asset', err)
-    // Ignore
-  }
 
-  const url = new URL(ctx.request.url);
-  let body;
-  if (requestHasBody(ctx.request)) {
-    body = Buffer.from(await ctx.request.arrayBuffer());
-  }
+    let body;
+    if (requestHasBody(request)) {
+      body = Buffer.from(await request.arrayBuffer());
+    }
 
-  const r = await nitroApp.localCall({
-    url: url.pathname + url.search,
-    method: ctx.request.method,
-    headers: ctx.request.headers,
-    host: url.hostname,
-    protocol: url.protocol,
-    body,
-    // TODO: Allow passing custom context
-    // cf: ctx,
-    // TODO: Handle redirects?
-    // redirect: ctx.request.redirect
-  });
+    const r = await nitroApp.localCall({
+      url: url.pathname + url.search,
+      method: request.method,
+      headers: request.headers,
+      host: url.hostname,
+      protocol: url.protocol,
+      body,
+    });
 
-  return new Response(r.body, {
-    // @ts-ignore TODO: Should be HeadersInit instead of string[][]
-    headers: normalizeOutgoingHeaders(r.headers),
-    status: r.status,
-    statusText: r.statusText,
-  });
+    return new Response(r.body, {
+      // @ts-ignore TODO: Should be HeadersInit instead of string[][]
+      headers: normalizeOutgoingHeaders(r.headers),
+      status: r.status,
+      statusText: r.statusText,
+    });
+  },
 }
 
 function normalizeOutgoingHeaders(
