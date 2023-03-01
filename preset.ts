@@ -10,12 +10,13 @@ export default defineNitroPreset({
   extends: "cloudflare",
   entry: require.resolve('./preset-entry.ts'),
   commands: {
-    preview: "npx wrangler pages dev ./pages",
-    deploy: "npx wrangler pages publish ./pages",
+    preview: "npx wrangler pages dev ./",
+    deploy: "npx wrangler pages publish ./",
   },
   output: {
-    publicDir: "{{ output.dir }}/pages",
-    serverDir: "{{ output.dir }}/pages",
+    dir: "dist",
+    publicDir: "{{ output.dir }}",
+    serverDir: "{{ output.dir }}",
   },
   alias: {
     // Hotfix: Cloudflare appends /index.html if mime is not found and things like ico are not in standard lite.js!
@@ -30,22 +31,10 @@ export default defineNitroPreset({
   },
   hooks: {
     async compiled(nitro: Nitro) {
-      await linkToDist(nitro)
       await writeCFRoutes(nitro)
     },
   },
 });
-
-async function linkToDist(nitro: Nitro) {
-  // Make symlink to dist for compatibility with zero config
-  const buildDir = nitro.options.output.serverDir
-  const distDir = resolve(nitro.options.rootDir, 'dist')
-  const distStat = await fsp.lstat(distDir).catch(() => { })
-  if (!distStat || distStat.isSymbolicLink()) {
-    await fsp.unlink(distDir).catch(() => {})
-    await fsp.symlink(buildDir, distDir).catch(() => { })
-  }
-}
 
 /**
  * https://developers.cloudflare.com/pages/platform/functions/routing/#functions-invocation-routes
