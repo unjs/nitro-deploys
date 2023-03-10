@@ -1,5 +1,5 @@
 export default eventHandler(() => {
   return {
-    processEnv: process.env
+    processEnv: process?.env || "<no env>"
   }
 })
