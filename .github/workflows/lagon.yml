@@ -20,11 +20,20 @@ jobs:
       - run: pnpm build
         env:
           NITRO_PRESET: lagon
-      - name: Update lagon config
-        run: echo '{"function_id":"cleoau1wk0000mj0843yvsgi7","organization_id":"cleeepy2j0006jx08ew36ivpg","index":"server/index.mjs","client":null,"assets":"public"}' > .output/.lagon/config.json
-      - name: Update logon token
-        run: mkdir -p ~/.lagon && echo \{\"token\":\"${LAGON_TOKEN}\",\"site_url\":\"https://dash.lagon.app\"\} > ~/.lagon/config.json
-        env:
-          LAGON_TOKEN: ${{ secrets.LAGON_TOKEN }}
       - name: Lagon deploy
-        run: npx lagon deploy --prod .output
+        uses: lagonapp/github-action@latest
+        if: github.ref == 'refs/heads/main'
+        with:
+          lagon_token: ${{ secrets.LAGON_TOKEN }}
+          config: |
+            {
+              "function_id": "cleoau1wk0000mj0843yvsgi7",
+              "organization_id": "cleeepy2j0006jx08ew36ivpg",
+              "index": ".output/server/index.mjs",
+              "client": null,
+              "assets": ".output/public"
+            }
+      - name: Log Function URL
+        run: |
+          url=$(grep -o 'https://[^[:space:]]*' lagon.output)
+          echo "Function available at: $url"
