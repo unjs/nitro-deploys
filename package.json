@@ -4,9 +4,10 @@
     "build": "nitro build",
     "dev": "nitro dev",
     "lint": "eslint --ext .ts . && prettier -c .",
+    "readme": "jiti scripts/update-readme.ts",
     "start": "node .output/server/index.mjs",
-    "test:deployment": "node test/api.test.mjs",
-    "test": "pnpm lint"
+    "test": "pnpm lint",
+    "test:deployment": "jiti ./scripts/test-deployments.ts"
   },
   "devDependencies": {
     "@actions/core": "^1.10.0",
@@ -14,6 +15,7 @@
     "eslint-config-unjs": "^0.2.1",
     "firebase-admin": "^11.9.0",
     "firebase-functions": "^4.4.1",
+    "jiti": "^1.18.2",
     "nitropack": "npm:nitropack-edge@latest",
     "ofetch": "^1.1.0",
     "prettier": "^2.8.8",

@@ -1,34 +1,14 @@
 import { withBase } from "ufo";
-
+import { deployments } from "../deployments";
 const { baseURL } = useRuntimeConfig().app;
-const url = (p) => withBase(p, baseURL);
+const getURL = (p) => withBase(p, baseURL);
 
-const routes = ["/route", "/another/route", "/api/hello"];
-
-const deployments = [
-  // { name: 'Azure Functions', url: 'https://nitro-deployment.azurewebsites.net/' },
-  {
-    name: "Azure Static",
-    url: "https://icy-pond-008be3f03.1.azurestaticapps.net/",
-  },
-  {
-    name: "Cloudflare Workers",
-    url: "https://nitro-deployment.pi0.workers.dev/",
-  },
-  { name: "DigitalOcean", url: "https://nitro-app-nom5n.ondigitalocean.app/" },
-  { name: "Firebase Hosting", url: "https://nitro-web-app.web.app/" },
-  { name: "Github Pages", url: "https://unjs.github.io/nitro-deploys/" },
-  { name: "Heroku", url: "https://nitro-app.herokuapp.com/" },
-  { name: "Lagon", url: "https://nitro-app.lagon.dev/" },
-  { name: "Netlify Functions", url: "https://nitro-deployment.netlify.app/" },
-  // { name: 'Netflify Edge', url: 'https://nitro-deployment-edge.netlify.app/' },
-  { name: "Render.com", url: "https://nitro-app.onrender.com/" },
-  { name: "Stormkit", url: "https://scourgebrick-ppmy24.stormkit.dev/" },
-  { name: "Vercel", url: "https://nitro-app.vercel.app" },
-  { name: "Vercel Edge", url: "https://nitro-app-edge.vercel.app" },
-].sort((a, b) => a.name.localeCompare(b.name));
+const routes = ["/api/hello", "/env", "/route", "/another/route"];
 
 export default defineRenderHandler((event) => {
+  const url = getRequestURL(event) as URL;
+  const currentDeployment = deployments.find((d) => d.url.includes(url.host));
+
   const body = html`<!DOCTYPE html>
     <html lang="en">
       <head>
@@ -36,32 +16,56 @@ export default defineRenderHandler((event) => {
         <title>Nitro Test Deployment</title>
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <script src="${url("/_dist/tailwind@3.2.6.js")}"></script>
+        <script src="${getURL("/_dist/tailwind@3.2.6.js")}"></script>
       </head>
 
       <body class="bg-yellow-600">
         <div class="flex justify-center items-center h-screen">
           <div class="bg-yellow-700 text-white p-8 rounded-lg max-w-lg">
             <h1 class="text-4xl font-bold mb-4">
-              <a href="${url("/")}">🐣 Nitro Test Deployment</a>
+              <a href="${getURL("/")}">🐣 Nitro Test Deployment</a>
             </h1>
             <div class="mb-3">
+              Routes: (current route: ${event.path})
               <ul>
                 ${routes
                   .map(
                     (link) =>
                       html` <li>
-                        <a href="${url(link)}" class="underline">${link}</a>
+                        <a href="${getURL(link)}" class="underline">${link}</a>
                       </li>`
                   )
                   .join("\n")}
               </ul>
-              Current route: ${event.path}
             </div>
             <div class="mt-3 pt-3 border-t-2">
               Performances:
               <table class="table-auto" id="perf"></table>
             </div>
+            <!-- Deployments list -->
+            <div class="border-t-2 mt-3 pt-3">
+              Current preset: ${currentDeployment?.name || "(custom)"} (<a
+                class="underline"
+                href="${currentDeployment?.url}"
+                >docs</a
+              >)
+              <br />
+              <br />
+              ${deployments
+                .map((d) =>
+                  d.enabled
+                    ? html` <a
+                        href="${d.url}"
+                        class="underline ${d.name === currentDeployment.name
+                          ? "font-bold"
+                          : ""}"
+                        >${d.name}</a
+                      >`
+                    : html` <span class="text-gray-200">${d.name}</span>`
+                )
+                .join(" | ")}
+            </div>
+            <!-- Footer -->
             <div class="mt-3 pt-3 border-t-2">
               Generated at ${new Date().toUTCString()} with
               <a
@@ -80,14 +84,6 @@ export default defineRenderHandler((event) => {
                 rel="noopener"
                 >(source code)</a
               >
-              <br />
-              <br />
-              ${deployments
-                .map(
-                  (d) =>
-                    html` <a href="${d.url}" class="underline">${d.name}</a>`
-                )
-                .join(" | ")}
             </div>
           </div>
         </div>

@@ -16,6 +16,9 @@ devDependencies:
   firebase-functions:
     specifier: ^4.4.1
     version: 4.4.1(firebase-admin@11.9.0)
+  jiti:
+    specifier: ^1.18.2
+    version: 1.18.2
   nitropack:
     specifier: npm:nitropack-edge@latest
     version: /nitropack-edge@2.5.0-28121325.cf70cd4
