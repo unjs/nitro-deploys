@@ -1,5 +1,8 @@
-import { defineNitroConfig } from 'nitropack'
-import nitroPkg from 'nitropack/package.json'
+import { defineNitroConfig } from 'nitropack/config'
+import { createRequire } from 'node:module'
+
+const require = createRequire(import.meta.url)
+const nitroPkg = require('nitropack/package.json')
 
 export default defineNitroConfig({
   renderer: './renderer',
