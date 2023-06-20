@@ -24,6 +24,6 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
       - name: Test deployed site
-        run: pnpm test
+        run: pnpm test:deployment
         env:
           DEPLOYMENT_URL: https://nitro-deployment.pi0.workers.dev/

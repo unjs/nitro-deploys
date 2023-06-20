@@ -5,7 +5,8 @@
     "dev": "nitro dev",
     "lint": "eslint --ext .ts . && prettier -c .",
     "start": "node .output/server/index.mjs",
-    "test": "pnpm lint && node test/api.test.mjs"
+    "test:deployment": "node test/api.test.mjs",
+    "test": "pnpm lint"
   },
   "devDependencies": {
     "@actions/core": "^1.10.0",

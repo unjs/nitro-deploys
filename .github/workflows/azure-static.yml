@@ -35,7 +35,7 @@ jobs:
           ###### End of Repository/Build Configurations ######
       - name: Test deployed site
         if: github.event_name == 'push'
-        run: npm run test
+        run: npm run test:deployment
         env:
           DEPLOYMENT_URL: https://icy-pond-008be3f03.1.azurestaticapps.net/
 
