@@ -62,7 +62,7 @@ export const deployments = [
   },
   {
     name: "Netflify Edge",
-    enabled: false,
+    enabled: true,
     url: "https://nitro-deployment-edge.netlify.app/",
     docs: "https://nitro.unjs.io/deploy/providers/netlify#netlify-edge-functions",
   },

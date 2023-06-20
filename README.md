@@ -11,7 +11,7 @@ Learn more about Nitro deployment: https://nitro.unjs.io/deploy/
 - **Github Pages**: [Deployment](https://unjs.github.io/nitro-deploys/) | [Docs](https://nitro.unjs.io/deploy/workers)
 - **Heroku**: ~~Deployment~~ | [Docs](https://nitro.unjs.io/deploy/providers/heroku)
 - **Lagon**: [Deployment](https://nitro-app.lagon.dev/) | [Docs](https://nitro.unjs.io/deploy/providers/lagon)
-- **Netflify Edge**: ~~Deployment~~ | [Docs](https://nitro.unjs.io/deploy/providers/netlify#netlify-edge-functions)
+- **Netflify Edge**: [Deployment](https://nitro-deployment-edge.netlify.app/) | [Docs](https://nitro.unjs.io/deploy/providers/netlify#netlify-edge-functions)
 - **Netlify Functions**: [Deployment](https://nitro-deployment.netlify.app/) | [Docs](https://nitro.unjs.io/deploy/providers/netlify)
 - **Render.com**: ~~Deployment~~ | [Docs](https://nitro.unjs.io/deploy/providers/render)
 - **Stormkit**: [Deployment](https://scourgebrick-ppmy24.stormkit.dev/) | [Docs](https://nitro.unjs.io/deploy/providers/stormkit)
