@@ -3,6 +3,7 @@
 Learn more about Nitro deployment: https://nitro.unjs.io/deploy/
 
 <!-- - **Azure Functions**: [Deployment](https://nitro-deployment.azurewebsites.net/) | [Docs](https://nitro.unjs.io/deploy/providers/azure) -->
+
 - **Azure Static Web Apps**: [Deployment](https://icy-pond-008be3f03.1.azurestaticapps.net/) | [Docs](https://nitro.unjs.io/deploy/providers/azure)
 - **Cloudflare Workers**: [Deployment](https://nitro-deployment.pi0.workers.dev) | [Docs](https://nitro.unjs.io/deploy/providers/cloudflare)
 - **Digital Ocean**: [Digital Ocean](https://nitro-app.ondigitalocean.app/) | [Docs](https://nitro.unjs.io/deploy/providers/digitalocean)

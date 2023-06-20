@@ -1,4 +1,4 @@
 export default defineEventHandler(() => ({
-   api: 'Works',
-   generatedAt: new Date().toUTCString()
-  }))
+  api: "Works",
+  generatedAt: new Date().toUTCString(),
+}));
