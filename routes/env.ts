@@ -1,11 +1,13 @@
 export default eventHandler(() => {
+  const runtimeConfig = useRuntimeConfig()
   return {
-    processEnv: safeEnv(process.env)
+    processEnv: safeObj(process.env),
+    runtimeConfig: safeObj(useRuntimeConfig())
   }
 })
 
 const tokenRe = /password|token|key|secret/i
 
-function safeEnv(env: Record<string, string> = {}) {
+function safeObj(env: Record<string, string> = {}) {
   return Object.fromEntries(Object.entries(env).filter(([key]) => !tokenRe.test(key)))
 }
