@@ -21,6 +21,7 @@
     "prettier": "^2.8.8",
     "ufo": "^1.1.2"
   },
+  "packageManager": "pnpm@8.6.3",
   "engines": {
     "node": "14.x || >=16.x"
   }
