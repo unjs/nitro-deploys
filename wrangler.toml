@@ -2,7 +2,7 @@ name = "nitro-deployment"
 account_id = "8ea39dfb7bb411de7fcff5444d7a5dbb"
 main = "./.output/server/index.mjs"
 workers_dev = true
-compatibility_date = "2022-04-07"
+compatibility_date = "2022-11-30"
 
 [site]
 bucket = ".output/public"
