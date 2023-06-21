@@ -7,7 +7,9 @@ const routes = ["/api/hello", "/env", "/stream"];
 
 export default defineRenderHandler((event) => {
   const url = getRequestURL(event) as URL;
-  const currentDeployment = deployments.find((d) => d.url.includes(url.host));
+  const currentDeployment =
+    deployments.find((d) => d.url.includes(url.host)) ||
+    ({} as (typeof deployments)[number]);
 
   const body = html`<!DOCTYPE html>
     <html lang="en">
