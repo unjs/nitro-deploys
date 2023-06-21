@@ -16,7 +16,7 @@ export default eventHandler((event) => {
           <html>
             <head>
               <meta charset="utf-8" />
-              <title>Streaming</title>
+              <title>Nitro Streaming Demo</title>
               <style>
                 body {
                   font-family: sans-serif;
@@ -39,7 +39,7 @@ export default eventHandler((event) => {
 
       for (let i = 1; i <= 10; i++) {
         write(html`Chunk ${i}<br />`);
-        await waitFor(100);
+        await waitFor(150);
       }
       write("Bye!");
 
@@ -58,11 +58,11 @@ function sendStream(event: H3Event, stream: ReadableStream) {
   // Mark to prevent h3 handling response
   event._handled = true;
 
-  if ("_data" in event.node.res) {
-    // Workers (unenv)
-    (event.node.res as unknown as { _data: BodyInit })._data = stream;
-  } else {
-    // Node.js
+  // Workers (unenv)
+  (event.node.res as unknown as { _data: BodyInit })._data = stream;
+
+  // Node.js
+  if (event.node.res.socket) {
     stream.pipeTo(
       new WritableStream({
         write(chunk) {
