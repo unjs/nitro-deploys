@@ -19,10 +19,16 @@ export default eventHandler((event) => {
               <title>Nitro Streaming Demo</title>
               <style>
                 body {
-                  font-family: sans-serif;
-                  background: #eee;
+                  font-family: monospace;
+                  color: #fff;
+                  background: #333;
                   font-size: 1.5em;
-                  padding: 2em;
+                  padding: 5em;
+                  justify-content: center;
+                  flex-direction: column;
+                }
+                a {
+                  color: #fff;
                 }
               </style>
             </head>
@@ -33,15 +39,16 @@ export default eventHandler((event) => {
                 href="https://github.com/unjs/nitro-deploys/blob/main/routes/stream.ts"
                 >Source Code</a
               ><br /><br />
-            </body>
-          </html>`
+            <!-- </body> -->
+          </html> `
       );
 
-      for (let i = 1; i <= 10; i++) {
-        write(html`Chunk ${i}<br />`);
-        await waitFor(150);
+      const text = `Nitro, an open source TypeScript framework, empowers you to create web servers that run anywhere, offering a range of impressive features such as rapid development through a zero config setup with hot module replacement for server code in development, a versatile deployment capability that allows for codebase deployment to any provider without extra configuration, and a portable and compact design, effectively eliminating the need for 'node_modules' with an output size of less than 1MB. Its filesystem routing feature automatically registers server and API routes, while maintaining a minimal design to fit into any solution with minimum overhead. The framework supports asynchronous chunk loading via code-splitting for a fast server startup time and response. Inherent TypeScript support is provided with several additional enhancements. Nitro also offers a multi-driver, platform-agnostic storage system, a powerful built-in caching API, and is highly customizable through its plugins hooks system. It further enhances code clarity with an auto imports feature, which automatically imports utilities for a minimal and clean codebase, adding only the used ones to the final bundle. Remarkably, Nitro maintains backward compatibility, enabling the use of legacy npm packages, CommonJS, and mocking Node.js modules for workers. This engine, openly powering Nuxt, is accessible to all, paving the way for a versatile and user-friendly web server development experience.
+      `;
+      for (const token of text.split(" ")) {
+        write(token + " ");
+        await waitFor(50);
       }
-      write("Bye!");
 
       controller.close();
     },
