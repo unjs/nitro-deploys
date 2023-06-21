@@ -3,7 +3,7 @@ import { deployments } from "../deployments";
 const { baseURL } = useRuntimeConfig().app;
 const getURL = (p) => withBase(p, baseURL);
 
-const routes = ["/api/hello", "/env", "/route", "/another/route"];
+const routes = ["/api/hello", "/env", "/stream"];
 
 export default defineRenderHandler((event) => {
   const url = getRequestURL(event) as URL;
@@ -109,8 +109,3 @@ export default defineRenderHandler((event) => {
     body,
   };
 });
-
-// Tip: Use lit-html VSCode extension to get syntax highlighting
-function html(strings, ...values) {
-  return String.raw(strings, ...values);
-}

@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 devDependencies:
   '@actions/core':
     specifier: ^1.10.0
@@ -16,15 +20,18 @@ devDependencies:
   firebase-functions:
     specifier: ^4.4.1
     version: 4.4.1(firebase-admin@11.9.0)
+  h3:
+    specifier: ^1.7.0
+    version: 1.7.0
   jiti:
     specifier: ^1.18.2
     version: 1.18.2
   nitropack:
     specifier: npm:nitropack-edge@latest
-    version: /nitropack-edge@2.5.0-28121325.cf70cd4
+    version: /nitropack-edge@2.5.0-28121690.34d9d1d
   ofetch:
-    specifier: ^1.1.0
-    version: 1.1.0
+    specifier: ^1.1.1
+    version: 1.1.1
   prettier:
     specifier: ^2.8.8
     version: 2.8.8
@@ -461,8 +468,8 @@ packages:
     dev: true
     optional: true
 
-  /@grpc/grpc-js@1.8.15:
-    resolution: {integrity: sha512-H2Bu/w6+oQ58DsRbQol66ERBk3V5ZIak/z/MDx0T4EgDnJWps807I6BvTjq0v6UvZtOcLO+ur+Q9wvniqu3OJA==}
+  /@grpc/grpc-js@1.8.16:
+    resolution: {integrity: sha512-Nvlq4V7XQmdRVDGgecR8ZPPCeY+uH1LhzbC+QxklwAahpQlq8YLsiOQgfkub9FiakRiohaDy361xqlTLkq9EHw==}
     engines: {node: ^8.13.0 || >=10.10.0}
     dependencies:
       '@grpc/proto-loader': 0.7.7
@@ -1458,20 +1465,20 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /c12@1.4.1:
-    resolution: {integrity: sha512-0x7pWfLZpZsgtyotXtuepJc0rZYE0Aw8PwNAXs0jSG9zq6Sl5xmbWnFqfmRY01ieZLHNbvneSFm9/x88CvzAuw==}
+  /c12@1.4.2:
+    resolution: {integrity: sha512-3IP/MuamSVRVw8W8+CHWAz9gKN4gd+voF2zm/Ln6D25C2RhytEZ1ABbC8MjKr4BR9rhoV1JQ7jJA158LDiTkLg==}
     dependencies:
       chokidar: 3.5.3
       defu: 6.1.2
       dotenv: 16.3.1
       giget: 1.1.2
       jiti: 1.18.2
-      mlly: 1.3.0
+      mlly: 1.4.0
       ohash: 1.1.2
       pathe: 1.1.1
-      perfect-debounce: 0.1.3
+      perfect-debounce: 1.0.0
       pkg-types: 1.0.3
-      rc9: 2.1.0
+      rc9: 2.1.1
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2923,7 +2930,7 @@ packages:
     engines: {node: '>=12'}
     hasBin: true
     dependencies:
-      '@grpc/grpc-js': 1.8.15
+      '@grpc/grpc-js': 1.8.16
       '@grpc/proto-loader': 0.7.7
       '@types/long': 4.0.2
       '@types/rimraf': 3.0.2
@@ -2991,12 +2998,12 @@ packages:
       duplexer: 0.1.2
     dev: true
 
-  /h3@1.6.6:
-    resolution: {integrity: sha512-DWu2s11OuuO9suEkX99dXaJoxd1RgPXiM4iDmLdrhGV63GLoav13f3Kdd5/Rw7xNKzhzn2+F2dleQjG66SnMPQ==}
+  /h3@1.7.0:
+    resolution: {integrity: sha512-iJJz2Pn2rC0j8CB3rkFMs0K269W7hDVOC7eL3qne5Joy4JZX1W7id7PBFV593GboHDOx0PzgO6ocqsynrIvdxw==}
     dependencies:
       cookie-es: 1.0.0
       defu: 6.1.2
-      destr: 1.2.2
+      destr: 2.0.0
       iron-webcrypto: 0.7.0
       radix3: 1.0.1
       ufo: 1.1.2
@@ -3914,8 +3921,8 @@ packages:
     hasBin: true
     dev: true
 
-  /mlly@1.3.0:
-    resolution: {integrity: sha512-HT5mcgIQKkOrZecOjOX3DJorTikWXwsBfpcr/MGBkhfWcjiqvnaL/9ppxvIUXfjT6xt4DVIAsN9fMUz1ev4bIw==}
+  /mlly@1.4.0:
+    resolution: {integrity: sha512-ua8PAThnTwpprIaU47EPeZ/bPUVp2QYBbWMphUQpVdBI3Lgqzm5KZQ45Agm3YJedHXaIHl6pBGabaLSUPPSptg==}
     dependencies:
       acorn: 8.9.0
       pathe: 1.1.1
@@ -3953,8 +3960,8 @@ packages:
     engines: {node: '>= 0.6'}
     dev: true
 
-  /nitropack-edge@2.5.0-28121325.cf70cd4:
-    resolution: {integrity: sha512-uZYoIHkiQKEXkKYsqZPS8POtucLAWkyL5iBrGqksk2zEdCO8J+I1tsg7VmsJwytBj56mZbX+2qN/apBmBiMXDQ==}
+  /nitropack-edge@2.5.0-28121690.34d9d1d:
+    resolution: {integrity: sha512-QbV3RkwTpGKs3iAXmAzc3h9/PXjqahM5WLw1GZDX+15PmzkVr/rQstHpQq/asF3tdTwWJSDWJoyp4s3sXg67fg==}
     engines: {node: ^14.16.0 || ^16.11.0 || >=17.0.0}
     hasBin: true
     dependencies:
@@ -3972,7 +3979,7 @@ packages:
       '@types/http-proxy': 1.17.11
       '@vercel/nft': 0.22.6
       archiver: 5.3.1
-      c12: 1.4.1
+      c12: 1.4.2
       chalk: 5.2.0
       chokidar: 3.5.3
       citty: 0.1.1
@@ -3987,7 +3994,7 @@ packages:
       fs-extra: 11.1.1
       globby: 13.2.0
       gzip-size: 7.0.0
-      h3: 1.6.6
+      h3: 1.7.0
       hookable: 5.5.3
       http-graceful-shutdown: 3.1.13
       http-proxy: 1.18.1
@@ -3998,10 +4005,10 @@ packages:
       listhen: 1.0.4
       magic-string: 0.30.0
       mime: 3.0.0
-      mlly: 1.3.0
+      mlly: 1.4.0
       mri: 1.2.0
       node-fetch-native: 1.2.0
-      ofetch: 1.1.0
+      ofetch: 1.1.1
       ohash: 1.1.2
       openapi-typescript: 6.2.8
       pathe: 1.1.1
@@ -4147,10 +4154,10 @@ packages:
       es-abstract: 1.21.2
     dev: true
 
-  /ofetch@1.1.0:
-    resolution: {integrity: sha512-yjq2ZUUMto1ITpge2J5vNlUfteLzxfHn9aJC55WtVGD3okKwSfPoLaKpcHXmmKd2kZZUGo+jdkFuuj09Blyeig==}
+  /ofetch@1.1.1:
+    resolution: {integrity: sha512-SSMoktrp9SNLi20BWfB/BnnKcL0RDigXThD/mZBeQxkIRv1xrd9183MtLdsqRYLYSqW0eTr5t8w8MqjNhvoOQQ==}
     dependencies:
-      destr: 1.2.2
+      destr: 2.0.0
       node-fetch-native: 1.2.0
       ufo: 1.1.2
     dev: true
@@ -4334,10 +4341,6 @@ packages:
     resolution: {integrity: sha512-d+RQGp0MAYTIaDBIMmOfMwz3E+LOZnxx1HZd5R18mmCZY0QBlK0LDZfPc8FW8Ed2DlvsuE6PRjroDY+wg4+j/Q==}
     dev: true
 
-  /perfect-debounce@0.1.3:
-    resolution: {integrity: sha512-NOT9AcKiDGpnV/HBhI22Str++XWcErO/bALvHCuhv33owZW/CjH8KAFLZDCmu3727sihe0wTxpDhyGc6M8qacQ==}
-    dev: true
-
   /perfect-debounce@1.0.0:
     resolution: {integrity: sha512-xCy9V055GLEqoFaHoC1SoLIaLmWctgCUaBaWxDZ7/Zx4CTyX7cJQLJOok/orfjZAh9kEYpjJa4d0KcJmCbctZA==}
     dev: true
@@ -4355,7 +4358,7 @@ packages:
     resolution: {integrity: sha512-nN7pYi0AQqJnoLPC9eHFQ8AcyaixBUOwvqc5TDnIKCMEE6I0y8P7OKA7fPexsXGCGxQDl/cmrLAp26LhcwxZ4A==}
     dependencies:
       jsonc-parser: 3.2.0
-      mlly: 1.3.0
+      mlly: 1.4.0
       pathe: 1.1.1
     dev: true
 
@@ -4491,11 +4494,11 @@ packages:
       unpipe: 1.0.0
     dev: true
 
-  /rc9@2.1.0:
-    resolution: {integrity: sha512-ROO9bv8PPqngWKoiUZU3JDQ4sugpdRs9DfwHnzDSxK25XtQn6BEHL6EOd/OtKuDT2qodrtNR+0WkPT6l0jxH5Q==}
+  /rc9@2.1.1:
+    resolution: {integrity: sha512-lNeOl38Ws0eNxpO3+wD1I9rkHGQyj1NU1jlzv4go2CtEnEQEUfqnIvZG7W+bC/aXdJ27n5x/yUjb6RoT9tko+Q==}
     dependencies:
       defu: 6.1.2
-      destr: 1.2.2
+      destr: 2.0.0
       flat: 5.0.2
     dev: true
 
@@ -5272,7 +5275,7 @@ packages:
       fast-glob: 3.2.12
       local-pkg: 0.4.3
       magic-string: 0.30.0
-      mlly: 1.3.0
+      mlly: 1.4.0
       pathe: 1.1.1
       pkg-types: 1.0.3
       scule: 1.0.0
@@ -5336,13 +5339,13 @@ packages:
       anymatch: 3.1.3
       chokidar: 3.5.3
       destr: 1.2.2
-      h3: 1.6.6
+      h3: 1.7.0
       ioredis: 5.3.2
       listhen: 1.0.4
       lru-cache: 9.1.2
       mri: 1.2.0
       node-fetch-native: 1.2.0
-      ofetch: 1.1.0
+      ofetch: 1.1.1
       ufo: 1.1.2
     transitivePeerDependencies:
       - supports-color
