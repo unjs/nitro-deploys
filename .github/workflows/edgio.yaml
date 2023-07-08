@@ -25,7 +25,7 @@ jobs:
       - run: pnpm build
         env:
           NITRO_PRESET: edgio
-      - run: npm i && npx edgio deploy --token=$deploy_token
+      - run: npm i && npx edgio deploy --property=nitro-deployment --token=$deploy_token
         working-directory: .output
         env:
           deploy_token: ${{ secrets.EDGIO_DEPLOY_TOKEN }}
