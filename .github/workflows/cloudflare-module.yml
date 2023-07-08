@@ -1,0 +1,29 @@
+name: cloudflare
+
+on:
+  push:
+    branches:
+      - main
+      - cloudflare
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: corepack enable
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: pnpm
+      - run: pnpm install
+      - run: pnpm build
+        env:
+          NITRO_PRESET: cloudflare-module
+      - run: npx wrangler deploy --env modules
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+      - name: Test deployed site
+        run: pnpm test:deployment
+        env:
+          DEPLOYMENT_URL: https://nitro-deployment-modules.pi0.workers.dev/
