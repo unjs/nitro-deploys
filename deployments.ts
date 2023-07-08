@@ -30,6 +30,12 @@ export const deployments = [
     docs: "https://nitro.unjs.io/deploy/providers/digitalocean",
   },
   {
+    name: "Edgio (Layer0)",
+    enabled: true,
+    url: "https://edgio.app/",
+    docs: "https://nitro.unjs.io/deploy/providers/edgio",
+  },
+  {
     name: "Firebase Hosting",
     enabled: true,
     url: "https://nitro-web-app.web.app/",

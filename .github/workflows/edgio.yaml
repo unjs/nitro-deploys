@@ -1,0 +1,35 @@
+name: edgio
+
+on:
+  push:
+    branches:
+      - main
+      - edgio
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches:
+      - main
+      - edgio
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: corepack enable
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: pnpm
+      - run: pnpm install
+      - run: pnpm build
+        env:
+          NITRO_PRESET: edgio
+      - run: npm run deploy
+        working-directory: .output
+        env:
+          deploy_token: ${{ secrets.EDGIO_DEPLOY_TOKEN }}
+      - name: Test deployed site
+        run: pnpm test:deployment
+        env:
+          DEPLOYMENT_URL: https://nitro-deployment.edgio.net/
