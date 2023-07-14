@@ -1,6 +1,7 @@
 {
   "functions": {
-    "source": ".output/server"
+    "source": ".output/server",
+    "runtime": "nodejs18"
   },
   "hosting": [
     {
@@ -10,7 +11,7 @@
       "rewrites": [
         {
           "source": "**",
-          "function": "server"
+          "function": "serverSecondGen"
         }
       ]
     }
