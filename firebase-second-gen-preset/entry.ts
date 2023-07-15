@@ -8,13 +8,13 @@ const nitroApp = useNitroApp();
 
 const onRequestDefaults = {
   memory: "1GiB",
-  // TODO: does this change anything?
-  invoker: "public",
 } satisfies HttpsOptions;
 
 export const serverSecondGen = onRequest(
   {
     ...onRequestDefaults,
+    // must be enforced for google cloud permissions to be set correctly
+    invoker: "public",
   },
   toNodeListener(nitroApp.h3App)
 );
