@@ -14,7 +14,7 @@ ${deployments
     return `- **${d.name}**: [Deployment](${d.url}) | [Docs](${d.docs})`;
   })
   .join("\n")}
-<!-- DEPLOYMENTS:END -->`
+<!-- DEPLOYMENTS:END -->`,
   );
   await writeFile("README.md", newReadme, "utf8");
 }

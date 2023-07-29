@@ -4,6 +4,7 @@
     "build": "nitro build",
     "dev": "nitro dev",
     "lint": "eslint --ext .ts . && prettier -c .",
+    "lint:fix": "eslint --fix --ext .ts . && prettier -w -c .",
     "readme": "jiti scripts/update-readme.ts",
     "start": "node .output/server/index.mjs",
     "test": "pnpm lint",

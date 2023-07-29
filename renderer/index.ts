@@ -11,7 +11,7 @@ export default defineRenderHandler((event) => {
     deployments.find((d) => d.url.includes(url.host)) ||
     ({} as (typeof deployments)[number]);
 
-  const body = html`<!DOCTYPE html>
+  const body = html`<!doctype html>
     <html lang="en">
       <head>
         <meta charset="utf-8" />
@@ -35,7 +35,7 @@ export default defineRenderHandler((event) => {
                     (link) =>
                       html` <li>
                         <a href="${getURL(link)}" class="underline">${link}</a>
-                      </li>`
+                      </li>`,
                   )
                   .join("\n")}
               </ul>
@@ -63,7 +63,7 @@ export default defineRenderHandler((event) => {
                           : ""}"
                         >${d.name}</a
                       >`
-                    : html` <span class="text-gray-200">${d.name}</span>`
+                    : html` <span class="text-gray-200">${d.name}</span>`,
                 )
                 .join(" | ")}
             </div>
@@ -100,7 +100,7 @@ export default defineRenderHandler((event) => {
           document.querySelector("#perf").innerHTML = Object.entries(measures)
             .map(
               ([name, value]) =>
-                "<tr><td>" + name + "</td><td>" + value + "ms</td></tr>"
+                "<tr><td>" + name + "</td><td>" + value + "ms</td></tr>",
             )
             .join("");
         </script>

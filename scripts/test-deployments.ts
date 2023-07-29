@@ -11,7 +11,7 @@ async function main() {
     await testDeployment(url);
   } else {
     for (const deployment of deployments.filter(
-      (d) => d.enabled && d.test !== false
+      (d) => d.enabled && d.test !== false,
     )) {
       await testDeployment(deployment.url);
     }
@@ -23,11 +23,11 @@ async function testDeployment(url: string) {
   try {
     ok(
       await $fetch(url).then((r) => r.includes("Nitro Test Deployment")),
-      "should fetch HTML"
+      "should fetch HTML",
     );
     ok(
       await $fetch(joinURL(url, "api/hello")).then((r) => r.api === "Works"),
-      "should fetch API"
+      "should fetch API",
     );
   } catch (error) {
     setFailed(error);

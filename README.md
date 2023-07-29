@@ -3,6 +3,7 @@
 Learn more about Nitro deployment: https://nitro.unjs.io/deploy/
 
 <!-- DEPLOYMENTS:START -->
+
 - **Azure Functions**: ~~Deployment~~ | [Docs](https://nitro.unjs.io/deploy/providers/azure)
 - **Azure Static**: [Deployment](https://icy-pond-008be3f03.1.azurestaticapps.net/) | [Docs](https://nitro.unjs.io/deploy/providers/azure)
 - **Cloudflare Workers**: [Deployment](https://nitro-deployment.pi0.workers.dev/) | [Docs](https://nitro.unjs.io/deploy/providers/cloudflare)
