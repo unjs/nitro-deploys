@@ -24,6 +24,9 @@
     "prettier": "^3.0.0",
     "ufo": "^1.2.0"
   },
+  "resolutions": {
+    "h3": "npm:h3-nightly@latest"
+  },
   "packageManager": "pnpm@8.6.3",
   "engines": {
     "node": "14.x || >=16.x"
