@@ -19,7 +19,7 @@
     "firebase-functions": "^4.4.1",
     "h3": "^1.7.1",
     "jiti": "^1.19.1",
-    "nitropack": "npm:nitropack-edge@latest",
+    "nitropack": "npm:nitropack-edge@2.6.0-28177183.4c4afd3",
     "ofetch": "^1.1.1",
     "prettier": "^3.0.0",
     "ufo": "^1.2.0"

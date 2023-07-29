@@ -9,6 +9,11 @@ export default defineNitroConfig({
   runtimeConfig: {
     nitroVersion: nitroPkg.version,
   },
+  vercel: {
+    functions: {
+      supportsResponseStreaming: true
+    }
+  },
   publicAssets: [
     {
       baseURL: "/_dist",

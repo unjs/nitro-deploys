@@ -30,8 +30,8 @@ devDependencies:
     specifier: ^1.19.1
     version: 1.19.1
   nitropack:
-    specifier: npm:nitropack-edge@latest
-    version: /nitropack-edge@2.6.0-28177035.f603119
+    specifier: npm:nitropack-edge@2.6.0-28177183.4c4afd3
+    version: /nitropack-edge@2.6.0-28177183.4c4afd3
   ofetch:
     specifier: ^1.1.1
     version: 1.1.1
@@ -4005,8 +4005,8 @@ packages:
     engines: {node: '>= 0.6'}
     dev: true
 
-  /nitropack-edge@2.6.0-28177035.f603119:
-    resolution: {integrity: sha512-DgZpCKML0k7b+/9HgXJH/1EcVA6w1hjsIUv7e4k7yHI/INaOUJHzWUA4EXFYAg3E1tA1CgNmZxV4wU5KmC0kYA==}
+  /nitropack-edge@2.6.0-28177183.4c4afd3:
+    resolution: {integrity: sha512-f+eBUZ/fugA9brDBzmqGyKpZCCp/4P6meKCIUC/LJLykGcxSQIgOFuPxoBlXhBLcNokqN2HYY440xEcMs5rg0g==}
     engines: {node: ^14.16.0 || ^16.11.0 || >=17.0.0}
     hasBin: true
     dependencies:
