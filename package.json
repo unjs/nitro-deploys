@@ -3,6 +3,7 @@
   "scripts": {
     "build": "nitro build",
     "dev": "nitro dev",
+    "prepare": "nitro prepare",
     "lint": "eslint --ext .ts . && prettier -c .",
     "lint:fix": "eslint --fix --ext .ts . && prettier -w -c .",
     "readme": "jiti scripts/update-readme.ts",
