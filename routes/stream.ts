@@ -1,8 +1,6 @@
-import { H3Event } from "h3";
-
 // Tracker issue: https://github.com/unjs/nitro/issues/1327
 
-export default eventHandler((event) => {
+export default eventHandler(() => {
   const encoder = new TextEncoder();
 
   const stream = new ReadableStream({
@@ -54,31 +52,9 @@ export default eventHandler((event) => {
     },
   });
 
-  return sendStream(event, stream);
+  return stream
 });
 
 function waitFor(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-function sendStream(event: H3Event, stream: ReadableStream) {
-  // Mark to prevent h3 handling response
-  event._handled = true;
-
-  // Workers (unenv)
-  (event.node.res as unknown as { _data: BodyInit })._data = stream;
-
-  // Node.js
-  if (event.node.res.socket) {
-    stream.pipeTo(
-      new WritableStream({
-        write(chunk) {
-          event.node.res.write(chunk);
-        },
-        close() {
-          event.node.res.end();
-        },
-      }),
-    );
-  }
 }
