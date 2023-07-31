@@ -11,8 +11,8 @@ export default defineNitroConfig({
   },
   vercel: {
     functions: {
-      supportsResponseStreaming: true
-    }
+      supportsResponseStreaming: true,
+    },
   },
   publicAssets: [
     {

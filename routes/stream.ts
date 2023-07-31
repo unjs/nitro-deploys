@@ -52,7 +52,7 @@ export default eventHandler(() => {
     },
   });
 
-  return stream
+  return stream;
 });
 
 function waitFor(ms: number) {
