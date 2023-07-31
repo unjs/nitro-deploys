@@ -4,9 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  h3: npm:h3-nightly@latest
-
 devDependencies:
   '@actions/core':
     specifier: ^1.10.0
@@ -24,14 +21,14 @@ devDependencies:
     specifier: ^4.4.1
     version: 4.4.1(firebase-admin@11.10.1)
   h3:
-    specifier: npm:h3-nightly@latest
-    version: /h3-nightly@1.8.0-1690474864.9bd85a3
+    specifier: ^1.8.0-rc.1
+    version: 1.8.0-rc.1
   jiti:
     specifier: ^1.19.1
     version: 1.19.1
   nitropack:
-    specifier: npm:nitropack-edge@2.6.0-28177183.4c4afd3
-    version: /nitropack-edge@2.6.0-28177183.4c4afd3
+    specifier: npm:nitropack-edge@latest
+    version: /nitropack-edge@2.6.0-28180145.e8e806a
   ofetch:
     specifier: ^1.1.1
     version: 1.1.1
@@ -462,7 +459,7 @@ packages:
       duplexify: 4.1.2
       ent: 2.2.0
       extend: 3.0.2
-      fast-xml-parser: 4.2.6
+      fast-xml-parser: 4.2.7
       gaxios: 5.1.3
       google-auth-library: 8.9.0
       mime: 3.0.0
@@ -2583,8 +2580,8 @@ packages:
     dev: true
     optional: true
 
-  /fast-xml-parser@4.2.6:
-    resolution: {integrity: sha512-Xo1qV++h/Y3Ng8dphjahnYe+rGHaaNdsYOBWL9Y9GCPKpNKilJtilvWkLcI9f9X2DoKTLsZsGYAls5+JL5jfLA==}
+  /fast-xml-parser@4.2.7:
+    resolution: {integrity: sha512-J8r6BriSLO1uj2miOk1NW0YVm8AGOOu3Si2HQp/cSmo6EA4m3fcwu2WKjJ4RK9wMLBtg69y1kS8baDiQBR41Ig==}
     hasBin: true
     dependencies:
       strnum: 1.0.5
@@ -3044,8 +3041,20 @@ packages:
       duplexer: 0.1.2
     dev: true
 
-  /h3-nightly@1.8.0-1690474864.9bd85a3:
-    resolution: {integrity: sha512-j44u3p/M+dQV2YI1t3iWRFat7inW4rwV2qD7K0ABRHJCfBttZQjQ0OUwLond8/fo8wc9KXw0ewN1JZb65lynFQ==}
+  /h3@1.7.1:
+    resolution: {integrity: sha512-A9V2NEDNHet7v1gCg7CMwerSigLi0SRbhTy7C3lGb0N4YKIpPmLDjedTUopqp4dnn7COHfqUjjaz3zbtz4QduA==}
+    dependencies:
+      cookie-es: 1.0.0
+      defu: 6.1.2
+      destr: 2.0.0
+      iron-webcrypto: 0.7.1
+      radix3: 1.0.1
+      ufo: 1.2.0
+      uncrypto: 0.1.3
+    dev: true
+
+  /h3@1.8.0-rc.1:
+    resolution: {integrity: sha512-e9UGHw8vRjjrVjwlJW3J8RPDSE66ASnWjF8r2KL4L1cBVo75sueLVicozFCkCCu0tdH4r97+0qtj/6Qaj5JTAA==}
     dependencies:
       cookie-es: 1.0.0
       defu: 6.1.2
@@ -3258,6 +3267,10 @@ packages:
   /ipaddr.js@1.9.1:
     resolution: {integrity: sha512-0KI/607xoxSToH7GjN1FfSbLoU0+btTicjsQSWQlh/hZykN8KpmMf7uYwPW3R+akZ6R/w18ZlXSHBYXiYUPO3g==}
     engines: {node: '>= 0.10'}
+    dev: true
+
+  /iron-webcrypto@0.7.1:
+    resolution: {integrity: sha512-K/UmlEhPCPXEHV5hAtH5C0tI5JnFuOrv4yO/j7ODPl3HaiiHBLbOLTde+ieUaAyfCATe4LoAnclyF+hmSCOVmQ==}
     dev: true
 
   /iron-webcrypto@0.8.0:
@@ -4005,8 +4018,8 @@ packages:
     engines: {node: '>= 0.6'}
     dev: true
 
-  /nitropack-edge@2.6.0-28177183.4c4afd3:
-    resolution: {integrity: sha512-f+eBUZ/fugA9brDBzmqGyKpZCCp/4P6meKCIUC/LJLykGcxSQIgOFuPxoBlXhBLcNokqN2HYY440xEcMs5rg0g==}
+  /nitropack-edge@2.6.0-28180145.e8e806a:
+    resolution: {integrity: sha512-m4z2B21NrcHvkXpUFO9cmjCpRpcuxaCuzAhEiP/N3xQyn+UDkixob1uAnDfwByR5qYXwjMGt5H1wRz/UnBPJrw==}
     engines: {node: ^14.16.0 || ^16.11.0 || >=17.0.0}
     hasBin: true
     dependencies:
@@ -4039,7 +4052,7 @@ packages:
       fs-extra: 11.1.1
       globby: 13.2.2
       gzip-size: 7.0.0
-      h3: /h3-nightly@1.8.0-1690474864.9bd85a3
+      h3: 1.8.0-rc.1
       hookable: 5.5.3
       http-graceful-shutdown: 3.1.13
       http-proxy: 1.18.1
@@ -5456,7 +5469,7 @@ packages:
       anymatch: 3.1.3
       chokidar: 3.5.3
       destr: 2.0.0
-      h3: /h3-nightly@1.8.0-1690474864.9bd85a3
+      h3: 1.7.1
       ioredis: 5.3.2
       listhen: 1.1.2
       lru-cache: 10.0.0

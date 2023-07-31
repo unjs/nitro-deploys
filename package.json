@@ -17,15 +17,12 @@
     "eslint-config-unjs": "^0.2.1",
     "firebase-admin": "^11.10.1",
     "firebase-functions": "^4.4.1",
-    "h3": "^1.7.1",
+    "h3": "^1.8.0-rc.1",
     "jiti": "^1.19.1",
-    "nitropack": "npm:nitropack-edge@2.6.0-28177183.4c4afd3",
+    "nitropack": "npm:nitropack-edge@latest",
     "ofetch": "^1.1.1",
     "prettier": "^3.0.0",
     "ufo": "^1.2.0"
-  },
-  "resolutions": {
-    "h3": "npm:h3-nightly@latest"
   },
   "packageManager": "pnpm@8.6.3",
   "engines": {
