@@ -17,7 +17,7 @@
     "eslint-config-unjs": "^0.2.1",
     "firebase-admin": "^11.10.1",
     "firebase-functions": "^4.4.1",
-    "h3": "^1.8.0-rc.1",
+    "h3": "^2.0.0",
     "jiti": "^1.19.1",
     "nitropack": "npm:nitropack-edge@latest",
     "ofetch": "^1.1.1",
