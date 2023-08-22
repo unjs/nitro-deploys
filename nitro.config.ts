@@ -14,6 +14,9 @@ export default defineNitroConfig({
       supportsResponseStreaming: true,
     },
   },
+  firebase: {
+    gen: 2,
+  },
   publicAssets: [
     {
       baseURL: "/_dist",
