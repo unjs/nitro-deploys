@@ -1,5 +1,3 @@
-// Tracker issue: https://github.com/unjs/nitro/issues/1327
-
 export default eventHandler(() => {
   const encoder = new TextEncoder();
 

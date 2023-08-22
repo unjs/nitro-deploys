@@ -1,6 +1,3 @@
 {
-  "extends": "./.nitro/types/tsconfig.json",
-  "compilerOptions": {
-    "baseUrl": "./"
-  }
+  "extends": "./.nitro/types/tsconfig.json"
 }
