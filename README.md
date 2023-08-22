@@ -8,7 +8,7 @@ Learn more about Nitro deployment: https://nitro.unjs.io/deploy/
 - **Azure Static**: [Deployment](https://icy-pond-008be3f03.1.azurestaticapps.net/) | [Docs](https://nitro.unjs.io/deploy/providers/azure)
 - **Cloudflare Workers**: [Deployment](https://nitro-deployment.pi0.workers.dev/) | [Docs](https://nitro.unjs.io/deploy/providers/cloudflare)
 - **DigitalOcean**: ~~Deployment~~ | [Docs](https://nitro.unjs.io/deploy/providers/digitalocean)
-- **Firebase Hosting**: [Deployment](https://nitro-web-app.web.app/) | [Docs](https://nitro.unjs.io/deploy/providers/firebase)
+- **Firebase Hosting**: [Deployment](https://nitro-deploy.web.app/) | [Docs](https://nitro.unjs.io/deploy/providers/firebase)
 - **Github Pages**: [Deployment](https://unjs.github.io/nitro-deploys/) | [Docs](https://nitro.unjs.io/deploy/workers)
 - **Heroku**: ~~Deployment~~ | [Docs](https://nitro.unjs.io/deploy/providers/heroku)
 - **Lagon**: [Deployment](https://nitro-app.lagon.dev/) | [Docs](https://nitro.unjs.io/deploy/providers/lagon)

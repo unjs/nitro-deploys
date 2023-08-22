@@ -32,7 +32,7 @@ export const deployments = [
   {
     name: "Firebase Hosting",
     enabled: true,
-    url: "https://nitro-web-app.web.app/",
+    url: "https://nitro-deploy.web.app/",
     docs: "https://nitro.unjs.io/deploy/providers/firebase",
   },
   {

@@ -4,7 +4,7 @@
   },
   "hosting": [
     {
-      "site": "nitro-web-app",
+      "site": "nitro-deploy",
       "public": ".output/public",
       "cleanUrls": true,
       "rewrites": [
