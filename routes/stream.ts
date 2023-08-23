@@ -1,4 +1,6 @@
 export default eventHandler(() => {
+  setResponseHeader("Content-Type", "text/html; charset=utf-8");
+
   const encoder = new TextEncoder();
 
   const stream = new ReadableStream({
