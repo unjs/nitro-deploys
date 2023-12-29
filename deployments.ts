@@ -49,12 +49,6 @@ export const deployments = [
     docs: "https://nitro.unjs.io/deploy/providers/heroku",
   },
   {
-    name: "Lagon",
-    enabled: true,
-    url: "https://nitro-app.lagon.dev/",
-    docs: "https://nitro.unjs.io/deploy/providers/lagon",
-  },
-  {
     name: "Netlify Functions",
     enabled: true,
     url: "https://nitro-deployment.netlify.app/",
