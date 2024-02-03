@@ -24,6 +24,12 @@ export const deployments = [
     docs: "https://nitro.unjs.io/deploy/providers/cloudflare",
   },
   {
+    name: "Deno Deploy",
+    enabled: true,
+    url: "https://nitro-deployment.deno-deploy.net/",
+    docs: "https://nitro.unjs.io/deploy/providers/deno-deploy",
+  },
+  {
     name: "DigitalOcean",
     enabled: false,
     url: "https://nitro-app-nom5n.ondigitalocean.app/",
