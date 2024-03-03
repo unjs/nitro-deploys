@@ -6,3 +6,6 @@ compatibility_date = "2022-11-30"
 
 [site]
 bucket = ".output/public"
+
+[env.modules]
+name = "nitro-deployment-modules"
