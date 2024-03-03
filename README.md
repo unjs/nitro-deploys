@@ -1,6 +1,6 @@
 # Nitro Test Deployments
 
-Learn more about Nitro deployment: https://nitro.unjs.io/deploy/
+Learn more about Nitro deployment: https://nitro.unjs.io/deploy
 
 <!-- DEPLOYMENTS:START -->
 
@@ -9,7 +9,7 @@ Learn more about Nitro deployment: https://nitro.unjs.io/deploy/
 - **Cloudflare Workers**: [Deployment](https://nitro-deployment.pi0.workers.dev/) | [Docs](https://nitro.unjs.io/deploy/providers/cloudflare)
 - **DigitalOcean**: ~~Deployment~~ | [Docs](https://nitro.unjs.io/deploy/providers/digitalocean)
 - **Firebase Hosting**: [Deployment](https://nitro-web-app.web.app/) | [Docs](https://nitro.unjs.io/deploy/providers/firebase)
-- **Github Pages**: [Deployment](https://unjs.github.io/nitro-deploys/) | [Docs](https://nitro.unjs.io/deploy/workers)
+- **Github Pages**: [Deployment](https://unjs.github.io/nitro-deploys/) | [Docs](https://nitro.unjs.io/deploy/providers/github-pages)
 - **Heroku**: ~~Deployment~~ | [Docs](https://nitro.unjs.io/deploy/providers/heroku)
 - **Netflify Edge**: [Deployment](https://nitro-deployment-edge.netlify.app/) | [Docs](https://nitro.unjs.io/deploy/providers/netlify#netlify-edge-functions)
 - **Netlify Functions**: [Deployment](https://nitro-deployment.netlify.app/) | [Docs](https://nitro.unjs.io/deploy/providers/netlify)
