@@ -18,10 +18,16 @@ export const deployments = [
     docs: "https://nitro.unjs.io/deploy/providers/azure",
   },
   {
-    name: "Cloudflare Workers",
+    name: "Cloudflare Workers - SW",
     enabled: true,
     url: "https://nitro-deployment.pi0.workers.dev/",
     docs: "https://nitro.unjs.io/deploy/providers/cloudflare",
+  },
+  {
+    name: "Cloudflare Workers - Module",
+    enabled: true,
+    url: "https://nitro-deployment-modules.pi0.workers.dev/",
+    docs: "https://nitro.unjs.io/deploy/providers/cloudflare#cloudflare-module-workers",
   },
   {
     name: "DigitalOcean",
