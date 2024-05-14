@@ -1,0 +1,41 @@
+name: deno-deploy
+
+on:
+  push:
+    branches:
+      - main
+      - deno-deploy
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches:
+      - main
+      - deno-deploy
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v3
+      - run: corepack enable
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: pnpm
+      - run: pnpm install
+      - run: pnpm build
+        env:
+          NITRO_PRESET: deno-deploy
+      - name: Deploy to Deno Deploy
+        uses: denoland/deployctl@v1
+        with:
+          project: nitro-deployment # the name of the project on Deno Deploy
+          entrypoint: .output/server/index.ts
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+      - name: Test deployed site
+        run: pnpm test:deployment
+        env:
+          DEPLOYMENT_URL: https://nitro-deployment.deno-deploy.net/
