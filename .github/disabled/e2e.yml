@@ -26,6 +26,3 @@ jobs:
           node-version: 20
           cache: pnpm
       - run: pnpm install
-      - run: pnpm test:deployment
-        env:
-          DEPLOYMENT_URL: ${{ github.event.inputs.url || github.event.deployment.payload.web_url || github.event.deployment_status.target_url }}

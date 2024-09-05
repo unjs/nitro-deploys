@@ -26,7 +26,3 @@ jobs:
           app-name: nitro-deployment
           package: .output/deploy.zip
           publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
-      - name: Test deployed site
-        run: pnpm test:deployment
-        env:
-          DEPLOYMENT_URL: https://nitro-deployment.azurewebsites.net/

@@ -1,10 +1,10 @@
-name: cloudflare
+name: cloudflare-workers
 
 on:
   push:
     branches:
       - main
-      - cloudflare
+      - cloudflare-workers
 
 jobs:
   deploy:
@@ -19,11 +19,7 @@ jobs:
       - run: pnpm install
       - run: pnpm build
         env:
-          NITRO_PRESET: cloudflare
+          NITRO_PRESET: cloudflare-module
       - uses: cloudflare/wrangler-action@v3.4.1
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
-      - name: Test deployed site
-        run: pnpm test:deployment
-        env:
-          DEPLOYMENT_URL: https://nitro-deployment.pi0.workers.dev/
