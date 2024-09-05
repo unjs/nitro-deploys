@@ -13,6 +13,6 @@ Learn more about Nitro deployment: https://nitro.unjs.io/deploy
 | Netlify Functions  | ✅         | ❌         |
 | Stormkit           | ✅         | ❌         |
 | Vercel             | ✅         | ✅         |
-| Vercel Edge        | ✅         | ❌         |
+| Vercel Edge        | ✅         | ✅         |
 
 <!-- /automd -->
