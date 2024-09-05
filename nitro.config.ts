@@ -1,18 +1,13 @@
 import { createRequire } from "node:module";
 import { defineNitroConfig } from "nitropack/config";
 
-const require = createRequire(import.meta.url);
-const nitroPkg = require("nitropack/package.json");
+const nitroPkg = createRequire(import.meta.url)("nitropack/package.json");
 
 export default defineNitroConfig({
-  renderer: "./renderer",
+  compatibilityDate: "2024-09-05",
+  srcDir: "./server",
   runtimeConfig: {
     nitroVersion: nitroPkg.version,
-  },
-  vercel: {
-    functions: {
-      supportsResponseStreaming: true,
-    },
   },
   publicAssets: [
     {

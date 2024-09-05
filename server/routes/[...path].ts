@@ -1,9 +1,10 @@
-import { withBase } from "ufo";
-import { deployments } from "../deployments";
-const { baseURL } = useRuntimeConfig().app;
-const getURL = (p) => withBase(p, baseURL);
+import { deployments } from "../../deployments";
 
-const routes = ["/api/hello", "/env", "/stream"];
+const { baseURL } = useRuntimeConfig().app;
+
+const getURL = (p) => baseURL + p.replace(/^\//, "");
+
+const routes = ["/api/hello", "/api/env", "/stream"];
 
 export default defineRenderHandler((event) => {
   const url = getRequestURL(event) as URL;
@@ -11,29 +12,31 @@ export default defineRenderHandler((event) => {
     deployments.find((d) => d.url.includes(url.host)) ||
     ({} as (typeof deployments)[number]);
 
-  const body = html`<!doctype html>
+  const body = /* html */ `<!doctype html>
     <html lang="en">
       <head>
         <meta charset="utf-8" />
         <title>Nitro Test Deployment</title>
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" href="/nitro.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <script src="${getURL("/_dist/tailwind@3.2.6.js")}"></script>
+        <script src="${getURL("/_dist/tailwind@3.4.5.js")}"></script>
       </head>
 
-      <body class="bg-yellow-600">
+      <body class="bg-neutral-900">
         <div class="flex justify-center items-center h-screen">
-          <div class="bg-yellow-700 text-white p-8 rounded-lg max-w-lg">
-            <h1 class="text-4xl font-bold mb-4">
-              <a href="${getURL("/")}">🐣 Nitro Test Deployment</a>
+          <div class="border border-gray-200 text-white p-8 rounded-lg max-w-lg">
+            <h1 class="text-3xl font-bold mb-4">
+              <img src="${getURL("/nitro.svg")}" class="w-8 h-8 inline-block" />
+              <a href="${getURL("/")}">Nitro Test Deployment</a>
             </h1>
             <div class="mb-3">
-              Routes: (current route: ${event.path})
-              <ul>
+              Current route: ${event.path}
+            </div>
+            <div class="mb-3">
+              <ul class="list-disc">
                 ${routes
                   .map(
-                    (link) =>
-                      html` <li>
+                    (link) => /* html */ ` <li>
                         <a href="${getURL(link)}" class="underline">${link}</a>
                       </li>`,
                   )
@@ -56,14 +59,14 @@ export default defineRenderHandler((event) => {
               ${deployments
                 .map((d) =>
                   d.enabled
-                    ? html` <a
+                    ? /* html */ ` <a
                         href="${d.url}"
-                        class="underline ${d.name === currentDeployment.name
-                          ? "font-bold"
-                          : ""}"
+                        class="underline ${
+                          d.name === currentDeployment.name ? "font-bold" : ""
+                        }"
                         >${d.name}</a
                       >`
-                    : html` <span class="text-gray-200">${d.name}</span>`,
+                    : /* html */ ` <span class="text-gray-200">${d.name}</span>`,
                 )
                 .join(" | ")}
             </div>
