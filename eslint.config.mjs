@@ -5,10 +5,11 @@ export default unjs({
   ignores: [
     "**/.nitro",
     "**/.output",
+    "**/.vercel",
+    "**/.netlify",
     "**/public",
     "**/dist",
     "**/_dist",
-    "**/.vercel",
   ],
   rules: {},
 });

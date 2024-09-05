@@ -1,19 +1,8 @@
 import { deployments } from "../deployments";
 import { describe, test, run, assert } from "./_runner";
 
-const _deployments = process.env.DEV
-  ? [
-      {
-        name: "Development",
-        enabled: true,
-        url: "http://localhost:3000",
-        docs: "https://nitro.unjs.io/",
-      },
-    ]
-  : deployments;
-
-for (const deployment of _deployments) {
-  if (!deployment.enabled) {
+for (const deployment of deployments) {
+  if (!deployment.url) {
     console.warn(`Skipping ${deployment.name}...`);
     continue;
   }
