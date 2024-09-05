@@ -12,7 +12,7 @@ Learn more about Nitro deployment: https://nitro.unjs.io/deploy
 | Netflify Edge      | ✅         | ❌         |
 | Netlify Functions  | ✅         | ❌         |
 | Stormkit           | ✅         | ❌         |
-| Vercel             | ✅         | ❌         |
+| Vercel             | ✅         | ✅         |
 | Vercel Edge        | ✅         | ❌         |
 
 <!-- /automd -->
