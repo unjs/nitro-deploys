@@ -1,12 +1,13 @@
-name: nitro-app
-yamlVersion: 2
 backend:
-  path: .output/
-  language:
-    name: js
-    packageManager: pnpm
-  functions:
-    - name: nitroServer
-      path: server/
-      handler: handler
-      entry: index.mjs
+    functions:
+        - entry: index.mjs
+          handler: handler
+          name: nitroServer
+          path: server/
+    language:
+        name: js
+        packageManager: pnpm
+    path: .output/
+name: nitro-app
+region: eu-central-1
+yamlVersion: 2
