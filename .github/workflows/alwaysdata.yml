@@ -27,5 +27,6 @@ jobs:
           password: ${{ secrets.ALWAYSDATA_SSH_PASS }}
           port: 22
           rm: true
-          source: ".output/server,.output/public"
+          strip_components: 1
+          source: .output
           target: app
