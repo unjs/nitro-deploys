@@ -1,0 +1,32 @@
+name: alwaysdata
+
+on:
+  push:
+    branches:
+      - main
+      - alwaysdata
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: corepack enable
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: pnpm
+      - run: pnpm install
+      - run: pnpm build
+        env:
+          NITRO_PRESET: alwaysdata
+      - uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ssh-nitro.alwaysdata.net
+          username: nitro
+          password: ${{ secrets.ALWAYSDATA_SSH_PASS }}
+          port: 22
+          rm: true
+          strip_components: 1
+          source: .output
+          target: app
