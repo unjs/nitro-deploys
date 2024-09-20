@@ -25,6 +25,6 @@ jobs:
           host: ssh-nitro.alwaysdata.net
           username: nitro
           password: ${{ secrets.ALWAYSDATA_SSH_PASS }}
-          port: 21
+          port: 22
           source: ".output"
           target: www/app
