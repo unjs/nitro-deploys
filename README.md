@@ -6,7 +6,7 @@ Continues [Nitro](https://nitro.unjs.io/) deployments for end-to-end testing dep
 
 <!-- automd:deployments -->
 
-- Alwaysdata ([docs](https://nitro.unjs.io/deploy/providers/alwaysdata) | ~~deployment~~ )
+- Alwaysdata ([docs](https://nitro.unjs.io/deploy/providers/alwaysdata) | [deployment](https://nitro.alwaysdata.net/) )
 - AWS Lambda ([docs](https://nitro.unjs.io/deploy/providers/aws) | ~~deployment~~ )
 - AWS Amplify ([docs](https://nitro.unjs.io/deploy/providers/aws-amplify) | ~~deployment~~ )
 - Azure Static Web Apps ([docs](https://nitro.unjs.io/deploy/providers/azure#azure-static-web-apps) | ~~deployment~~ )
