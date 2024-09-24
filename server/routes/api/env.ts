@@ -1,6 +1,7 @@
 export default eventHandler(() => {
   return {
     "process.env": safeObj(process.env),
+    "globalThis['process'].env": safeObj(globalThis["process"].env),
     "globalThis.__env__": safeObj(globalThis.__env__),
     runtimeConfig: safeObj(useRuntimeConfig()),
   };
