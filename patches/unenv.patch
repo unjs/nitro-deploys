@@ -1,0 +1,108 @@
+diff --git a/runtime/node/process/_process.mjs b/runtime/node/process/_process.mjs
+index 414a464cbd803388861b5dc2f10c65986bed324d..b024862528ea19ce767777ee31892c74f8b78ee8 100644
+--- a/runtime/node/process/_process.mjs
++++ b/runtime/node/process/_process.mjs
+@@ -7,14 +7,16 @@ function defaultSetTimeout() {
+ function defaultClearTimeout() {
+   throw new Error("clearTimeout has not been defined");
+ }
+-(function() {
++(function () {
+   try {
+-    cachedSetTimeout = typeof setTimeout === "function" ? setTimeout : defaultSetTimeout;
++    cachedSetTimeout =
++      typeof setTimeout === "function" ? setTimeout : defaultSetTimeout;
+   } catch {
+     cachedSetTimeout = defaultSetTimeout;
+   }
+   try {
+-    cachedClearTimeout = typeof clearTimeout === "function" ? clearTimeout : defaultClearTimeout;
++    cachedClearTimeout =
++      typeof clearTimeout === "function" ? clearTimeout : defaultClearTimeout;
+   } catch {
+     cachedClearTimeout = defaultClearTimeout;
+   }
+@@ -23,7 +25,10 @@ function runTimeout(fun) {
+   if (cachedSetTimeout === setTimeout) {
+     return setTimeout(fun, 0);
+   }
+-  if ((cachedSetTimeout === defaultSetTimeout || !cachedSetTimeout) && setTimeout) {
++  if (
++    (cachedSetTimeout === defaultSetTimeout || !cachedSetTimeout) &&
++    setTimeout
++  ) {
+     cachedSetTimeout = setTimeout;
+     return setTimeout(fun, 0);
+   }
+@@ -41,7 +46,10 @@ function runClearTimeout(marker) {
+   if (cachedClearTimeout === clearTimeout) {
+     return clearTimeout(marker);
+   }
+-  if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
++  if (
++    (cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) &&
++    clearTimeout
++  ) {
+     cachedClearTimeout = clearTimeout;
+     return clearTimeout(marker);
+   }
+@@ -95,7 +103,7 @@ function drainQueue() {
+   draining = false;
+   runClearTimeout(timeout);
+ }
+-process.nextTick = function(fun) {
++process.nextTick = function (fun) {
+   const args = Array.from({ length: arguments.length - 1 });
+   if (arguments.length > 1) {
+     for (let i = 1; i < arguments.length; i++) {
+@@ -111,13 +119,14 @@ function Item(fun, array) {
+   this.fun = fun;
+   this.array = array;
+ }
+-Item.prototype.run = function() {
++Item.prototype.run = function () {
+   this.fun.apply(null, this.array);
+ };
+ process.title = "unenv";
+ const _envShim = /* @__PURE__ */ Object.create(null);
+ const _processEnv = globalThis.process?.env;
+-const _getEnv = (useShim) => _processEnv || globalThis.__env__ || (useShim ? _envShim : globalThis);
++const _getEnv = (useShim) =>
++  globalThis.__env__ || _processEnv || (useShim ? _envShim : globalThis);
+ process.env = new Proxy(_envShim, {
+   get(_, prop) {
+     const env = _getEnv();
+@@ -139,7 +148,7 @@ process.env = new Proxy(_envShim, {
+   ownKeys() {
+     const env = _getEnv();
+     return Object.keys(env);
+-  }
++  },
+ });
+ process.argv = [];
+ process.version = "";
+@@ -156,19 +165,19 @@ process.removeAllListeners = noop;
+ process.emit = noop;
+ process.prependListener = noop;
+ process.prependOnceListener = noop;
+-process.listeners = function(name) {
++process.listeners = function (name) {
+   return [];
+ };
+-process.binding = function(name) {
++process.binding = function (name) {
+   throw new Error("[unenv] process.binding is not supported");
+ };
+ let cwd = "/";
+-process.cwd = function() {
++process.cwd = function () {
+   return cwd;
+ };
+-process.chdir = function(dir) {
++process.chdir = function (dir) {
+   cwd = dir;
+ };
+-process.umask = function() {
++process.umask = function () {
+   return 0;
+ };
