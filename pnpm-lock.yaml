@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  jiti: 2.0.0-beta.3
+  jiti: 2.0.0
 
 importers:
 
@@ -21,8 +21,8 @@ importers:
         specifier: ^0.3.2
         version: 0.3.2(eslint@8.57.0)(typescript@5.6.2)
       jiti:
-        specifier: 2.0.0-beta.3
-        version: 2.0.0-beta.3
+        specifier: 2.0.0
+        version: 2.0.0
       nitropack:
         specifier: npm:nitropack-nightly@latest
         version: nitropack-nightly@2.10.0-28767276.7dc8ae55(typescript@5.6.2)
@@ -1566,8 +1566,8 @@ packages:
   jackspeak@3.4.3:
     resolution: {integrity: sha512-OGlZQpz2yfahA/Rd1Y8Cd9SIEsqvXkLVoSw/cgwhnhFMDbsQFeZYoJJ7bIZBS9BcamUW96asq/npPWugM+RQBw==}
 
-  jiti@2.0.0-beta.3:
-    resolution: {integrity: sha512-pmfRbVRs/7khFrSAYnSiJ8C0D5GvzkE4Ey2pAvUcJsw1ly/p+7ut27jbJrjY79BpAJQJ4gXYFtK6d1Aub+9baQ==}
+  jiti@2.0.0:
+    resolution: {integrity: sha512-CJ7e7Abb779OTRv3lomfp7Mns/Sy1+U4pcAx5VbjxCZD5ZM/VJaXPpPjNKjtSvWQy/H86E49REXR34dl1JEz9w==}
     hasBin: true
 
   js-levenshtein@1.1.6:
@@ -3379,7 +3379,7 @@ snapshots:
       defu: 6.1.4
       dotenv: 16.4.5
       giget: 1.2.3
-      jiti: 2.0.0-beta.3
+      jiti: 2.0.0
       mlly: 1.7.1
       ohash: 1.1.3
       pathe: 1.1.2
@@ -3396,7 +3396,7 @@ snapshots:
       defu: 6.1.4
       dotenv: 16.4.5
       giget: 1.2.3
-      jiti: 2.0.0-beta.3
+      jiti: 2.0.0
       mlly: 1.7.1
       ohash: 1.1.3
       pathe: 1.1.2
@@ -4136,7 +4136,7 @@ snapshots:
     optionalDependencies:
       '@pkgjs/parseargs': 0.11.0
 
-  jiti@2.0.0-beta.3: {}
+  jiti@2.0.0: {}
 
   js-levenshtein@1.1.6: {}
 
@@ -4203,7 +4203,7 @@ snapshots:
       get-port-please: 3.1.2
       h3: 1.12.0
       http-shutdown: 1.2.2
-      jiti: 2.0.0-beta.3
+      jiti: 2.0.0
       mlly: 1.7.1
       node-forge: 1.3.1
       pathe: 1.1.2
@@ -4383,7 +4383,7 @@ snapshots:
       hookable: 5.5.3
       httpxy: 0.1.5
       ioredis: 5.4.1
-      jiti: 2.0.0-beta.3
+      jiti: 2.0.0
       klona: 2.0.6
       knitwork: 1.1.0
       listhen: 1.7.2
@@ -5079,7 +5079,7 @@ snapshots:
       '@babel/standalone': 7.25.6
       '@babel/types': 7.25.6
       defu: 6.1.4
-      jiti: 2.0.0-beta.3
+      jiti: 2.0.0
       mri: 1.2.0
       scule: 1.3.0
     transitivePeerDependencies:
