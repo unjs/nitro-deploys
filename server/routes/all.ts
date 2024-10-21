@@ -1,4 +1,4 @@
-import { deployments } from "./[...path]";
+import { deployments } from "./index";
 
 const { baseURL } = useRuntimeConfig().app;
 
