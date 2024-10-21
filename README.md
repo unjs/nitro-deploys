@@ -25,7 +25,7 @@ Continues [Nitro](https://nitro.unjs.io/) deployments for end-to-end testing dep
 - Netflify Edge ([docs](https://nitro.unjs.io/deploy/providers/netlify#netlify-edge-functions) | [deployment](https://nitro-deployment-edge.netlify.app/) )
 - Platform.sh ([docs](https://nitro.unjs.io/deploy/providers/platformsh) | ~~deployment~~ )
 - Render.com ([docs](https://nitro.unjs.io/deploy/providers/render) | [deployment](https://nitro-app.onrender.com/) )
-- Stormkit ([docs](https://nitro.unjs.io/deploy/providers/stormkit) | ~~deployment~~ )
+- Stormkit ([docs](https://nitro.unjs.io/deploy/providers/stormkit) | [deployment](https://nitro.stormkit.dev/) )
 - Vercel ([docs](https://nitro.unjs.io/deploy/providers/vercel) | [deployment](https://nitro-app.vercel.app/) )
 - Vercel Edge ([docs](https://nitro.unjs.io/deploy/providers/vercel#vercel-edge-functions) | [deployment](https://nitro-app-edge.vercel.app/) )
 - Zeabur ([docs](https://nitro.unjs.io/deploy/providers/zeabur) | ~~deployment~~ )
