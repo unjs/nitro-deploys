@@ -10,12 +10,19 @@ export function defineTestHandler(
     if (getRequestHeader(event, "accept").includes("text/html")) {
       return /* html */ `
         <pre id="logs"></pre>
+        <hr>
+        <a href="https://github.com/unjs/nitro-deploys/blob/main/server/routes/tests/${name}.ts" target="_blank">view source</a>
         <script type="module">
           // Log utils
           const logs = document.getElementById('logs');
           const log = (text) => {
             console.log(text);
             logs.innerHTML += '<div>' + text + '</div>';
+            // Send to iframe parent
+            window.parent.postMessage({
+              test: '${name}',
+              message: text,
+            });
           }
 
           // Assert util
@@ -32,9 +39,10 @@ export function defineTestHandler(
           log('⏳ Running test: ${name}');
           try {
             await _test(assert);
-            log('✅ Test passed');
+            log('✅ PASS');
           } catch (error) {
-            log('❌ Test failed' + error.stack);
+            log(error.stack);
+            log('❌ FAIL');
           }
         </script>
       `;

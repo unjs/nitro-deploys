@@ -4,7 +4,7 @@ const { baseURL } = useRuntimeConfig().app;
 
 const getURL = (p) => baseURL + p.replace(/^\//, "");
 
-const routes = ["/api/hello", "/api/env", "/stream"];
+const tests = ["api", "form-data"];
 
 export const deployments = [..._deployments];
 if (import.meta.dev) {
@@ -87,14 +87,14 @@ export default defineEventHandler((event) => {
           ${stats}
         </div>
 
-        <!-- Routes -->
+        <!-- Tests -->
         <div class="mb-3 border-t-1">
-          <p>Current route: ${event.path}</p>
           <ul style="list-style: circle">
-            ${routes
+            ${tests
               .map(
-                (link) => /* html */ ` <li>
-              <a href="${getURL(link)}" class="underline">${link}</a>
+                (test) => /* html */ ` <li id="tests-${test}">
+                <span id="tests-${test}-status">.</span>
+              <a href="${getURL("/tests/" + test)}" class="underline">${test}</a>
             </li>`,
               )
               .join("\n")}
@@ -133,6 +133,27 @@ export default defineEventHandler((event) => {
 
   </body>
 
+  <script type="module">
+    const tests = ${JSON.stringify(tests)};
+    for (const test of tests) {
+      const el = document.getElementById("tests-" + test + "-status");
+      el.innerHTML = "⏳";
+      const iframe = document.createElement("iframe");
+      iframe.src = "${getURL("/tests/")}" + test;
+      iframe.style.display = "none";
+      document.body.appendChild(iframe);
+    }
+    window.addEventListener('message', (event) => {
+      if (event.data.test) {
+        const el = document.getElementById("tests-" + event.data.test + "-status");
+        if (event.data.message.includes("PASS")) {
+          el.innerHTML = "✅";
+        } else if (event.data.message.includes("FAIL")) {
+          el.innerHTML = "❌";
+        }
+      }
+    });
+  </script>
   </html>
   `;
 });
