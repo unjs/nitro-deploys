@@ -115,7 +115,7 @@ export const deployments = [
   },
   {
     name: "Stormkit",
-    url: "",
+    url: "https://nitro.stormkit.dev/",
     dash: "https://app.stormkit.io/",
     docs: "https://nitro.unjs.io/deploy/providers/stormkit",
   },
