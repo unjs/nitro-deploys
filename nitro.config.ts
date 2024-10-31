@@ -9,6 +9,13 @@ export default defineNitroConfig({
   runtimeConfig: {
     nitroVersion: nitroPkg.version,
   },
+  rollupConfig: {
+    output: {
+      entryFileNames: "index.js",
+      format: "esm",
+      inlineDynamicImports: false,
+    },
+  },
   publicAssets: [
     {
       baseURL: "/_dist",
