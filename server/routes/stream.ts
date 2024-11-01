@@ -33,7 +33,7 @@ export default eventHandler((event) => {
               <h1>Nitro Streaming Demo</h1>
               <br />
               <a
-                href="https://github.com/unjs/nitro-deploys/blob/main/routes/stream.ts"
+                href="https://github.com/nitrojs/nitro-deploys/blob/main/routes/stream.ts"
                 >Source Code</a
               ><br /><br />
             <!-- </body> -->

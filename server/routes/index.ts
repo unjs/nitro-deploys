@@ -123,7 +123,7 @@ export default defineEventHandler((event) => {
                 class="text-gray-200">@${useRuntimeConfig().nitroVersion}</span>
             </p>
             <p class="text-center">
-              <a href="https://github.com/unjs/nitro-deploys" class="underline" target="_blank" rel="noopener">source code</a>
+              <a href="https://github.com/nitrojs/nitro-deploys" class="underline" target="_blank" rel="noopener">source code</a>
               </a>
             </p>
           </div>

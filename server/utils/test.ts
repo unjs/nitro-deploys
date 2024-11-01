@@ -11,7 +11,7 @@ export function defineTestHandler(
       return /* html */ `
         <pre id="logs"></pre>
         <hr>
-        <a href="https://github.com/unjs/nitro-deploys/blob/main/server/routes/tests/${name}.ts" target="_blank">view source</a>
+        <a href="https://github.com/nitrojs/nitro-deploys/blob/main/server/routes/tests/${name}.ts" target="_blank">view source</a>
         <script type="module">
           // Log utils
           const logs = document.getElementById('logs');

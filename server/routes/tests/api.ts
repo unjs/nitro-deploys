@@ -1,4 +1,4 @@
-// https://github.com/unjs/nitro/issues/1721
+// https://github.com/nitrojs/nitro/issues/1721
 export default defineTestHandler(
   "api",
   async (_event) => {
