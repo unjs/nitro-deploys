@@ -1,0 +1,19 @@
+zerops:
+  - setup: app
+    build:
+      base: nodejs@20
+      envVariables:
+        SERVER_PRESET: zerops
+      buildCommands:
+        - pnpm i
+        - pnpm run build
+      deployFiles:
+        - .output
+        - package.json
+        - node_modules
+    run:
+      base: nodejs@20
+      ports:
+        - port: 3000
+          httpSupport: true
+      start: node .output/server/index.mjs
