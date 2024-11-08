@@ -66,6 +66,12 @@ export const deployments = [
     docs: "https://nitro.unjs.io/deploy/providers/firebase",
   },
   {
+    name: "Firebase App Hosting",
+    url: "",
+    dash: "https://console.firebase.google.com/",
+    docs: "",
+  },
+  {
     name: "Flightcontrol",
     url: "",
     dash: "https://app.flightcontrol.dev/",
