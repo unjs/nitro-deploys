@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      confbox:
+        specifier: ^0.1.8
+        version: 0.1.8
     devDependencies:
       '@actions/core':
         specifier: ^1.10.1

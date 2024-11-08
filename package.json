@@ -24,5 +24,8 @@
   "packageManager": "pnpm@9.10.0",
   "engines": {
     "node": ">=20.17.0"
+  },
+  "dependencies": {
+    "confbox": "^0.1.8"
   }
 }
