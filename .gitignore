@@ -9,3 +9,4 @@ dist
 .vercel_build_output
 .firebase
 .vercel
+.apphosting

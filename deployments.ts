@@ -60,8 +60,14 @@ export const deployments = [
     docs: "https://nitro.unjs.io/deploy/providers/edgio",
   },
   {
-    name: "Firebase",
+    name: "Firebase Hosting",
     url: "",
+    dash: "https://console.firebase.google.com/",
+    docs: "https://nitro.unjs.io/deploy/providers/firebase",
+  },
+  {
+    name: "Firebase App Hosting",
+    url: "https://nitro-app--nitro-949b8.europe-west4.hosted.app/",
     dash: "https://console.firebase.google.com/",
     docs: "https://nitro.unjs.io/deploy/providers/firebase",
   },
