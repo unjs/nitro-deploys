@@ -8,12 +8,10 @@ zerops:
         - pnpm i
         - pnpm run build
       deployFiles:
-        - .output
-        - package.json
-        - node_modules
+        - .output/~
     run:
       base: nodejs@20
       ports:
         - port: 3000
           httpSupport: true
-      start: node .output/server/index.mjs
+      start: node server/index.mjs
