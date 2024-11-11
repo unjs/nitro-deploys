@@ -6,7 +6,7 @@
     "dev": "nitropack dev",
     "lint": "eslint . && prettier -c .",
     "lint:fix": "eslint --fix . && prettier -w -c .",
-    "prepare": "nitropack prepare",
+    "dev:prepare": "nitropack prepare",
     "readme": "automd && pnpm lint:fix",
     "test": "pnpm lint && test:deployments",
     "test:deployments": "jiti ./test/tests.ts",
