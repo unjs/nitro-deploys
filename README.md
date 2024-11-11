@@ -29,6 +29,6 @@ Continues [Nitro](https://nitro.unjs.io/) deployments for end-to-end testing dep
 - Vercel ([docs](https://nitro.unjs.io/deploy/providers/vercel) | [deployment](https://nitro-app.vercel.app/) )
 - Vercel Edge ([docs](https://nitro.unjs.io/deploy/providers/vercel#vercel-edge-functions) | [deployment](https://nitro-app-edge.vercel.app/) )
 - Zeabur ([docs](https://nitro.unjs.io/deploy/providers/zeabur) | ~~deployment~~ )
-- Zerops ([docs](https://nitro.unjs.io/deploy/providers/zerops) | ~~deployment~~ )
+- Zerops ([docs](https://nitro.unjs.io/deploy/providers/zerops) | [deployment](https://app-ba-3000.prg1.zerops.app) )
 
 <!-- /automd -->
