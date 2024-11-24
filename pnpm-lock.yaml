@@ -9,10 +9,10 @@ importers:
   .:
     devDependencies:
       '@actions/core':
-        specifier: ^1.10.1
+        specifier: ^1.11.1
         version: 1.11.1
       automd:
-        specifier: ^0.3.8
+        specifier: ^0.3.12
         version: 0.3.12(magicast@0.3.5)
       eslint-config-unjs:
         specifier: ^0.4.1
@@ -21,7 +21,7 @@ importers:
         specifier: '*'
         version: 1.13.0
       jiti:
-        specifier: ^2.3.3
+        specifier: ^2.4.0
         version: 2.4.0
       nitropack:
         specifier: npm:nitropack-nightly@latest
@@ -1386,8 +1386,8 @@ packages:
     resolution: {integrity: sha512-O1Ld7Dr+nqPnmGpdhzLmMTQ4vAsD+rHwMm1NLUmoUFFymBOMKxCCrtDxqdBRYXdeEPEi3SyoR4TizJLQrnKBNA==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
-  h3-nightly@1.13.1-20241013-011028-3bf8af0:
-    resolution: {integrity: sha512-4kygQHpL1MqsabGd2IRpZ1nGUWw6xXpNq4u6ier2ydZr/Hs6/oQlR5fm9WNIhBYaO5sS5ati+UVwsFg+q5JFeg==}
+  h3-nightly@1.13.1-20241114-132633-3dd17c2:
+    resolution: {integrity: sha512-FCIC7pdIZgT5+F4PCJ7weGJ+3nPezcbqniVAR3aQ4cLWXHVowQm3QW6lPUPl9YjLnA97xem3z7F3EfC0McKqIw==}
 
   h3@1.13.0:
     resolution: {integrity: sha512-vFEAu/yf8UMUcB4s43OaDaigcqpQd14yanmOsn+NcRX3/guSKncyE2rOYhq8RIchgJrPSs/QiIddnTTR1ddiAg==}
@@ -3866,7 +3866,7 @@ snapshots:
     dependencies:
       duplexer: 0.1.2
 
-  h3-nightly@1.13.1-20241013-011028-3bf8af0:
+  h3-nightly@1.13.1-20241114-132633-3dd17c2:
     dependencies:
       cookie-es: 1.2.2
       crossws: 0.3.1
@@ -4284,7 +4284,7 @@ snapshots:
       fs-extra: 11.2.0
       globby: 14.0.2
       gzip-size: 7.0.0
-      h3: h3-nightly@1.13.1-20241013-011028-3bf8af0
+      h3: h3-nightly@1.13.1-20241114-132633-3dd17c2
       hookable: 5.5.3
       httpxy: 0.1.5
       ioredis: 5.4.1
