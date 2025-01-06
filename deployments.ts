@@ -109,7 +109,7 @@ export const deployments = [
   },
   {
     name: "Platform.sh",
-    url: "",
+    url: "https://main-bvxea6i-gtpvl3hzdfys2.de-2.platformsh.site/",
     dash: "https://console.platform.sh/",
     docs: "https://nitro.build/deploy/providers/platform-sh",
   },
