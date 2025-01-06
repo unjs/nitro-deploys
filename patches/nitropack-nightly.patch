@@ -1,0 +1,68 @@
+diff --git a/dist/rollup/index.mjs b/dist/rollup/index.mjs
+index 191766868e1d61433abcba053b45e11f29d8016d..a62cd61b08020b7f74849bb402b874645019e121 100644
+--- a/dist/rollup/index.mjs
++++ b/dist/rollup/index.mjs
+@@ -93,9 +93,9 @@ const inlineAppConfig = ${JSON.stringify(nitro.options.appConfig, null, 2)};
+ ${nitro.options.appConfigFiles.map((file, i) => genImport(file, "appConfig" + i) + ";").join("\n")}
+ 
+ export const appConfig = defuFn(${[
+-        ...nitro.options.appConfigFiles.map((_, i) => "appConfig" + i),
+-        "inlineAppConfig"
+-      ].join(", ")});
++          ...nitro.options.appConfigFiles.map((_, i) => "appConfig" + i),
++          "inlineAppConfig"
++        ].join(", ")});
+       `
+     },
+     nitro.vfs
+@@ -864,9 +864,9 @@ function externals(opts) {
+             const warn = `Multiple major versions of package \`${pkgName}\` are being externalized. Picking latest version:
+ 
+ ` + [
+-              `  ${isNewer ? "-" : "+"} ` + existingPkgDir + "@" + v1,
+-              `  ${isNewer ? "+" : "-"} ` + pkgDir + "@" + v2
+-            ].join("\n");
++                `  ${isNewer ? "-" : "+"} ` + existingPkgDir + "@" + v1,
++                `  ${isNewer ? "+" : "-"} ` + pkgDir + "@" + v2
++              ].join("\n");
+             if (!ignoreWarns.has(warn)) {
+               consola.warn(warn);
+               ignoreWarns.add(warn);
+@@ -1307,14 +1307,17 @@ export function readAsset (id) {
+         return `
+ import assets from '#nitro-internal-virtual/public-assets-data'
+ export { readAsset } from "${readAssetImport}"
++
++export const baseURL = ${JSON.stringify(nitro.options.baseURL.replace(/\/$/, ""))})}
++
+ export const publicAssetBases = ${JSON.stringify(publicAssetBases)}
+ 
+ export function isPublicAssetURL(id = '') {
+-  if (assets[id]) {
++  if (assets[id] || assets[baseURL + id]) {
+     return true
+   }
+   for (const base in publicAssetBases) {
+-    if (id.startsWith(base)) { return true }
++    if (id.startsWith(base) || id.startsWith(baseURL + base)) { return true }
+   }
+   return false
+ }
+@@ -1388,14 +1391,14 @@ function raw(opts = {}) {
+       if (isBinary(id)) {
+         const serialized = Buffer.from(code, "binary").toString("base64");
+         return {
+-          code: `// ROLLUP_NO_REPLACE 
+- import {base64ToUint8Array } from "${HELPER_ID}" 
++          code: `// ROLLUP_NO_REPLACE
++ import {base64ToUint8Array } from "${HELPER_ID}"
+  export default base64ToUint8Array("${serialized}")`,
+           map: null
+         };
+       }
+       return {
+-        code: `// ROLLUP_NO_REPLACE 
++        code: `// ROLLUP_NO_REPLACE
+  export default ${JSON.stringify(code)}`,
+         map: null
+       };
