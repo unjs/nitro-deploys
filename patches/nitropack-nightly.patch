@@ -1,5 +1,5 @@
 diff --git a/dist/rollup/index.mjs b/dist/rollup/index.mjs
-index 191766868e1d61433abcba053b45e11f29d8016d..a62cd61b08020b7f74849bb402b874645019e121 100644
+index 191766868e1d61433abcba053b45e11f29d8016d..21af43d4b9c996d39850779ff4beb7e6211389cc 100644
 --- a/dist/rollup/index.mjs
 +++ b/dist/rollup/index.mjs
 @@ -93,9 +93,9 @@ const inlineAppConfig = ${JSON.stringify(nitro.options.appConfig, null, 2)};
@@ -33,7 +33,7 @@ index 191766868e1d61433abcba053b45e11f29d8016d..a62cd61b08020b7f74849bb402b87464
  import assets from '#nitro-internal-virtual/public-assets-data'
  export { readAsset } from "${readAssetImport}"
 +
-+export const baseURL = ${JSON.stringify(nitro.options.baseURL.replace(/\/$/, ""))})}
++export const baseURL = ${JSON.stringify(nitro.options.baseURL.replace(/\/$/, ""))}
 +
  export const publicAssetBases = ${JSON.stringify(publicAssetBases)}
  

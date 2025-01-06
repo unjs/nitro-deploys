@@ -6,7 +6,7 @@ settings:
 
 patchedDependencies:
   nitropack-nightly:
-    hash: rrxb3l5ibpm3p3a4oqbai27psm
+    hash: loql75re4edhjqzg2a7xj6p4py
     path: patches/nitropack-nightly.patch
 
 importers:
@@ -30,7 +30,7 @@ importers:
         version: 2.4.2
       nitropack:
         specifier: npm:nitropack-nightly@2.11.0-20250106-215327.64e32d78
-        version: nitropack-nightly@2.11.0-20250106-215327.64e32d78(patch_hash=rrxb3l5ibpm3p3a4oqbai27psm)(typescript@5.7.2)
+        version: nitropack-nightly@2.11.0-20250106-215327.64e32d78(patch_hash=loql75re4edhjqzg2a7xj6p4py)(typescript@5.7.2)
       prettier:
         specifier: ^3.4.2
         version: 3.4.2
@@ -4186,7 +4186,7 @@ snapshots:
 
   natural-compare@1.4.0: {}
 
-  nitropack-nightly@2.11.0-20250106-215327.64e32d78(patch_hash=rrxb3l5ibpm3p3a4oqbai27psm)(typescript@5.7.2):
+  nitropack-nightly@2.11.0-20250106-215327.64e32d78(patch_hash=loql75re4edhjqzg2a7xj6p4py)(typescript@5.7.2):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.3.4
       '@netlify/functions': 2.8.2
