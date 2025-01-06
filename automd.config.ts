@@ -7,7 +7,7 @@ export default {
         const md = deployments
           .map(
             (d) =>
-              `- ${d.name} ([docs](${d.docs}) | ${d.url ? `[deployment](${d.url})` : `~~deployment~~`} )`,
+              `- ${d.name} ([docs](${d.docs}) | ${d.url ? `[deployment](${d.url}base/)` : `~~deployment~~`} )`,
           )
           .join("\n");
         return { contents: md };
