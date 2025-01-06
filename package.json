@@ -18,16 +18,11 @@
     "eslint-config-unjs": "^0.4.2",
     "h3": "^1.13.0",
     "jiti": "^2.4.2",
-    "nitropack": "npm:nitropack-nightly@2.11.0-20250106-213249.7c780cc3",
+    "nitropack": "npm:nitropack-nightly@2.11.0-20250106-215327.64e32d78",
     "prettier": "^3.4.2"
   },
   "packageManager": "pnpm@9.15.3",
   "engines": {
     "node": ">=20.18.1"
-  },
-  "pnpm": {
-    "patchedDependencies": {
-      "nitropack-nightly": "patches/nitropack-nightly.patch"
-    }
   }
 }

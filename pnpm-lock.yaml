@@ -4,11 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-patchedDependencies:
-  nitropack-nightly:
-    hash: 56ammzjlt7gnsj4rgcthlwv6by
-    path: patches/nitropack-nightly.patch
-
 importers:
 
   .:
@@ -29,8 +24,8 @@ importers:
         specifier: ^2.4.2
         version: 2.4.2
       nitropack:
-        specifier: npm:nitropack-nightly@2.11.0-20250106-213249.7c780cc3
-        version: nitropack-nightly@2.11.0-20250106-213249.7c780cc3(patch_hash=56ammzjlt7gnsj4rgcthlwv6by)(typescript@5.7.2)
+        specifier: npm:nitropack-nightly@2.11.0-20250106-215327.64e32d78
+        version: nitropack-nightly@2.11.0-20250106-215327.64e32d78(typescript@5.7.2)
       prettier:
         specifier: ^3.4.2
         version: 3.4.2
@@ -1756,8 +1751,8 @@ packages:
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
-  nitropack-nightly@2.11.0-20250106-213249.7c780cc3:
-    resolution: {integrity: sha512-vDgTMf/9oUypPztoefUqo/pnMwgDBst/fMb2Qj13LfwrnD+DjNbUYm4MD5r4krcRr0eqMkaALny8mQgRldNH7g==}
+  nitropack-nightly@2.11.0-20250106-215327.64e32d78:
+    resolution: {integrity: sha512-WKyouBhRiGOG7R7pPImlKnVso1N+py9PqCymweO+x5SXvkNfEWlkRlANbrm7WYlFJTXGNGTmAmMCR2OQsnKvcA==}
     engines: {node: ^16.11.0 || >=17.0.0}
     hasBin: true
     peerDependencies:
@@ -4186,7 +4181,7 @@ snapshots:
 
   natural-compare@1.4.0: {}
 
-  nitropack-nightly@2.11.0-20250106-213249.7c780cc3(patch_hash=56ammzjlt7gnsj4rgcthlwv6by)(typescript@5.7.2):
+  nitropack-nightly@2.11.0-20250106-215327.64e32d78(typescript@5.7.2):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.3.4
       '@netlify/functions': 2.8.2
