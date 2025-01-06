@@ -79,6 +79,7 @@ export const deployments = [
   },
   {
     name: "Genezio",
+    broken: true,
     url: "https://0c2321a6-8af4-4d6b-bda9-46d197865f05.eu-central-1.cloud.genez.io/",
     dash: "https://app.genez.io/",
     docs: "https://nitro.unjs.io/deploy/providers/genezio",
@@ -115,12 +116,14 @@ export const deployments = [
   },
   {
     name: "Render.com",
+    broken: true,
     url: "https://nitro-app.onrender.com/",
     dash: "https://dashboard.render.com/",
     docs: "https://nitro.unjs.io/deploy/providers/render",
   },
   {
     name: "Stormkit",
+    broken: true,
     url: "https://nitro.stormkit.dev/",
     dash: "https://app.stormkit.io/",
     docs: "https://nitro.unjs.io/deploy/providers/stormkit",

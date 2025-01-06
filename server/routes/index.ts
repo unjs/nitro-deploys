@@ -114,7 +114,7 @@ export default defineEventHandler((event) => {
               class="mt-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
               ${deployments
                 .map((d) =>
-                  d.url
+                  d.url && !d.broken
                     ? /* html */ ` <option value="${d.url + baseURL.slice(1)}" ${d.url === currentDeployment.url ? "selected" : ""}>${d.name}</option>`
                     : /* html */ `<option disabled>${d.name}</option>`,
                 )
