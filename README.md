@@ -21,7 +21,7 @@ Continues [Nitro](https://nitro.unjs.io/) deployments for end-to-end testing dep
 - Flightcontrol ([docs](https://nitro.unjs.io/deploy/providers/flightcontrol) | ~~deployment~~ )
 - Genezio ([docs](https://nitro.unjs.io/deploy/providers/genezio) | ~~deployment~~ )
 - Heroku ([docs](https://nitro.unjs.io/deploy/providers/heroku) | ~~deployment~~ )
-- Koyeb ([docs](https://nitro.unjs.io/deploy/providers/koyeb) | ~~deployment~~ )
+- Koyeb ([docs](https://nitro.unjs.io/deploy/providers/koyeb) | [deployment](https://shy-constancy-pi0-229c4ed6.koyeb.app/base/) )
 - Netlify Functions ([docs](https://nitro.unjs.io/deploy/providers/netlify) | [deployment](https://nitro-deployment.netlify.app/base/) )
 - Netflify Edge ([docs](https://nitro.unjs.io/deploy/providers/netlify#netlify-edge-functions) | [deployment](https://nitro-deployment-edge.netlify.app/base/) )
 - Platform.sh ([docs](https://nitro.unjs.io/deploy/providers/platformsh) | ~~deployment~~ )

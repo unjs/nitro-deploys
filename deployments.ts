@@ -91,7 +91,7 @@ export const deployments = [
   },
   {
     name: "Koyeb",
-    url: "",
+    url: "https://shy-constancy-pi0-229c4ed6.koyeb.app/",
     dash: "https://app.koyeb.com/",
     docs: "https://nitro.unjs.io/deploy/providers/koyeb",
   },
