@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  nitropack-nightly:
+    hash: 56ammzjlt7gnsj4rgcthlwv6by
+    path: patches/nitropack-nightly.patch
+
 importers:
 
   .:
@@ -25,7 +30,7 @@ importers:
         version: 2.4.2
       nitropack:
         specifier: npm:nitropack-nightly@2.11.0-20250106-213249.7c780cc3
-        version: nitropack-nightly@2.11.0-20250106-213249.7c780cc3(typescript@5.7.2)
+        version: nitropack-nightly@2.11.0-20250106-213249.7c780cc3(patch_hash=56ammzjlt7gnsj4rgcthlwv6by)(typescript@5.7.2)
       prettier:
         specifier: ^3.4.2
         version: 3.4.2
@@ -4181,7 +4186,7 @@ snapshots:
 
   natural-compare@1.4.0: {}
 
-  nitropack-nightly@2.11.0-20250106-213249.7c780cc3(typescript@5.7.2):
+  nitropack-nightly@2.11.0-20250106-213249.7c780cc3(patch_hash=56ammzjlt7gnsj4rgcthlwv6by)(typescript@5.7.2):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.3.4
       '@netlify/functions': 2.8.2

@@ -1,0 +1,25 @@
+diff --git a/dist/presets/netlify/preset.mjs b/dist/presets/netlify/preset.mjs
+index 3e378598a79da09868487a9256172d7f676d1092..7014d50f31b9ffe34e5e962b91640973d168177f 100644
+--- a/dist/presets/netlify/preset.mjs
++++ b/dist/presets/netlify/preset.mjs
+@@ -10,6 +10,7 @@ import {
+   writeHeaders,
+   writeRedirects
+ } from "./utils.mjs";
++
+ const netlify = defineNitroPreset(
+   {
+     entry: "./runtime/netlify",
+diff --git a/dist/presets/netlify/utils.mjs b/dist/presets/netlify/utils.mjs
+index 8878eba324d39e9b455b6960136e75e569e2c7c0..8bd3938fda015491d5c615797d62f03a516f51e3 100644
+--- a/dist/presets/netlify/utils.mjs
++++ b/dist/presets/netlify/utils.mjs
+@@ -91,7 +91,7 @@ export { default } from "./main.mjs";
+ export const config = {
+   name: "server handler",
+   generator: "${getGeneratorString(nitro)}",
+-  path: "${joinURL(nitro.options.baseURL, "*")}",
++  path: "/*",
+   excludedPath: ${JSON.stringify(getStaticPaths(nitro.options.publicAssets, nitro.options.baseURL))},
+   preferStatic: true,
+ };
