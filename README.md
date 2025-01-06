@@ -25,7 +25,7 @@ Continues [Nitro](https://nitro.unjs.io/) deployments for end-to-end testing dep
 - Netlify Functions ([docs](https://nitro.unjs.io/deploy/providers/netlify) | [deployment](https://nitro-deployment.netlify.app/base/) )
 - Netflify Edge ([docs](https://nitro.unjs.io/deploy/providers/netlify#netlify-edge-functions) | [deployment](https://nitro-deployment-edge.netlify.app/base/) )
 - Platform.sh ([docs](https://nitro.build/deploy/providers/platform-sh) | [deployment](https://main-bvxea6i-gtpvl3hzdfys2.de-2.platformsh.site/base/) )
-- Render.com ([docs](https://nitro.unjs.io/deploy/providers/render) | [deployment](https://nitro-app.onrender.com/base/) )
+- Render.com ([docs](https://nitro.unjs.io/deploy/providers/render) | [~~deployment~~](https://nitro-app.onrender.com/base/) )
 - Stormkit ([docs](https://nitro.unjs.io/deploy/providers/stormkit) | [~~deployment~~](https://nitro.stormkit.dev/base/) )
 - Vercel ([docs](https://nitro.unjs.io/deploy/providers/vercel) | [deployment](https://nitro-app.vercel.app/base/) )
 - Vercel Edge ([docs](https://nitro.unjs.io/deploy/providers/vercel#vercel-edge-functions) | [deployment](https://nitro-app-edge.vercel.app/base/) )
