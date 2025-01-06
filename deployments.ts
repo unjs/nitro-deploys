@@ -43,7 +43,7 @@ export const deployments = [
   },
   {
     name: "Deno Deploy",
-    url: "",
+    url: "https://nitro.deno.dev/",
     dash: "https://dash.deno.com/",
     docs: "https://nitro.unjs.io/deploy/providers/deno-deploy",
   },
