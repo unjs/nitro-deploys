@@ -1,5 +1,5 @@
 name: nitro-app
-type: 'nodejs:22'
+type: "nodejs:22"
 disk: 128
 web:
   commands:
@@ -12,6 +12,6 @@ hooks:
     npx nypm install
     NITR_PRESET=platform_sh npm run build
 mounts:
-    '.data':
-        source: local
-        source_path: .data
+  ".data":
+    source: local
+    source_path: .data
