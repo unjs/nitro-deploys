@@ -1,0 +1,17 @@
+name: nitro-app
+type: 'nodejs:22'
+disk: 128
+web:
+  commands:
+    start: "node .output/server/index.mjs"
+build:
+  flavor: none
+hooks:
+  build: |
+    corepack enable
+    npx nypm install
+    NITR_PRESET=platform_sh npm run build
+mounts:
+    '.data':
+        source: local
+        source_path: .data

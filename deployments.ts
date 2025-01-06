@@ -111,7 +111,7 @@ export const deployments = [
     name: "Platform.sh",
     url: "",
     dash: "https://console.platform.sh/",
-    docs: "https://nitro.unjs.io/deploy/providers/platformsh",
+    docs: "https://nitro.build/deploy/providers/platform-sh",
   },
   {
     name: "Render.com",
