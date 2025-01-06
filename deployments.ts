@@ -145,7 +145,7 @@ export const deployments = [
   },
   {
     name: "Zerops",
-    url: "https://app-6a5-3000.prg1.zerops.app/",
+    url: "https://app-a46-3000.prg1.zerops.app/",
     dash: "https://app.zerops.io/",
     docs: "https://nitro.unjs.io/deploy/providers/zerops",
   },
