@@ -16,7 +16,10 @@ if (import.meta.dev) {
   });
 }
 export default defineEventHandler((event) => {
-  const url = getRequestURL(event) as URL;
+  const url = getRequestURL(event, {
+    xForwardedHost: true,
+    xForwardedProto: true,
+  }) as URL;
   const currentDeployment =
     deployments.find((d) => d.url.includes(url.host)) ||
     ({
