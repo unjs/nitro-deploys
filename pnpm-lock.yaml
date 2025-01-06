@@ -24,8 +24,8 @@ importers:
         specifier: ^2.4.2
         version: 2.4.2
       nitropack:
-        specifier: npm:nitropack-nightly@latest
-        version: nitropack-nightly@2.11.0-20250106-175604.d8fb358e(typescript@5.7.2)
+        specifier: npm:nitropack-nightly@2.11.0-20250106-213249.7c780cc3
+        version: nitropack-nightly@2.11.0-20250106-213249.7c780cc3(typescript@5.7.2)
       prettier:
         specifier: ^3.4.2
         version: 3.4.2
@@ -1751,8 +1751,8 @@ packages:
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
-  nitropack-nightly@2.11.0-20250106-175604.d8fb358e:
-    resolution: {integrity: sha512-WZsshV+gCymAexq82NpZpHyBSvsWU8bmceNhLU9jH8Qw02K1Inz4wyKh+DCAZvaU0Ytr9P2k2dOQv6tliL3Bag==}
+  nitropack-nightly@2.11.0-20250106-213249.7c780cc3:
+    resolution: {integrity: sha512-vDgTMf/9oUypPztoefUqo/pnMwgDBst/fMb2Qj13LfwrnD+DjNbUYm4MD5r4krcRr0eqMkaALny8mQgRldNH7g==}
     engines: {node: ^16.11.0 || >=17.0.0}
     hasBin: true
     peerDependencies:
@@ -4181,7 +4181,7 @@ snapshots:
 
   natural-compare@1.4.0: {}
 
-  nitropack-nightly@2.11.0-20250106-175604.d8fb358e(typescript@5.7.2):
+  nitropack-nightly@2.11.0-20250106-213249.7c780cc3(typescript@5.7.2):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.3.4
       '@netlify/functions': 2.8.2
