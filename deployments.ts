@@ -79,7 +79,7 @@ export const deployments = [
   },
   {
     name: "Genezio",
-    url: "",
+    url: "https://0c2321a6-8af4-4d6b-bda9-46d197865f05.eu-central-1.cloud.genez.io/",
     dash: "https://app.genez.io/",
     docs: "https://nitro.unjs.io/deploy/providers/genezio",
   },

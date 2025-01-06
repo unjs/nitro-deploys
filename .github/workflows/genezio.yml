@@ -1,0 +1,25 @@
+name: genezio
+on:
+  push:
+    branches:
+      - main
+      - genezio
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write # Needed for auth with Deno Deploy
+    steps:
+      - uses: actions/checkout@v4
+      - run: corepack enable
+      - uses: actions/setup-node@v4
+        with:
+          cache: "pnpm"
+      - run: pnpm install
+      - run: pnpm build
+        env:
+          NITRO_PRESET: genezio
+      - run: npx genezio login $GENEZIO_TOKEN && npx genezio deploy
+        env:
+          GENEZIO_TOKEN: ${{ secrets.GENEZIO_TOKEN }}
