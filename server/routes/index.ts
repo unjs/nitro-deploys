@@ -19,7 +19,9 @@ export default defineEventHandler((event) => {
   const url = getRequestURL(event) as URL;
   const currentDeployment =
     deployments.find((d) => d.url.includes(url.host)) ||
-    ({} as (typeof deployments)[number]);
+    ({
+      name: url.hostname + ` (unknown)`,
+    } as (typeof deployments)[number]);
 
   const stats = /* html */ `
       <table id="perf" class="table-auto" style="color: white" ></table>
