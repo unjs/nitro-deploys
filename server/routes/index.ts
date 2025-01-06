@@ -2,7 +2,7 @@ import { deployments as _deployments } from "../../deployments";
 
 const { baseURL } = useRuntimeConfig().app;
 
-const getURL = (p) => baseURL + p.replace(/^\//, "");
+const withBase = (p) => baseURL + p.replace(/^\//, "");
 
 const tests = ["api", "form-data"];
 
@@ -10,7 +10,7 @@ export const deployments = [..._deployments];
 if (import.meta.dev) {
   deployments.unshift({
     name: "dev",
-    url: "http://localhost:3000",
+    url: "http://localhost:3000/",
     dash: "",
     docs: "",
   });
@@ -64,9 +64,9 @@ export default defineEventHandler((event) => {
   <head>
     <meta charset="utf-8" />
     <title>Nitro Test Deployment</title>
-    <link rel="icon" href="/nitro.svg" />
+    <link rel="icon" href="${withBase("/nitro.svg")}" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="${getURL("/_dist/tailwind@3.4.5.js")}"></script>
+    <script src="${withBase("/_dist/tailwind@3.4.5.js")}"></script>
   </head>
 
   <body class="bg-neutral-900">
@@ -74,9 +74,9 @@ export default defineEventHandler((event) => {
       <div class="border border-gray-200 text-white p-8 rounded-lg max-w-lg">
         <!-- Title -->
         <h1 class="flex items-center mb-4">
-          <img src="${getURL("/nitro.svg")}" class="w-8 h-8 mr-4" />
+          <img src="${withBase("/nitro.svg")}" class="w-8 h-8 mr-4" />
           <div>
-            <a class="text-3xl font-bold" href="${currentDeployment.url}">Nitro Test Deployment</a>
+            <a class="text-3xl font-bold" href="${currentDeployment.url + baseURL.slice(1)}">Nitro Test Deployment</a>
             <br>
             <a class="text-xl underline" href="${currentDeployment.docs}">${currentDeployment.name}</a>
           </div>
@@ -94,7 +94,7 @@ export default defineEventHandler((event) => {
               .map(
                 (test) => /* html */ ` <li id="tests-${test}">
                 <span id="tests-${test}-status">.</span>
-              <a href="${getURL("/tests/" + test)}" class="underline">${test}</a>
+              <a href="${withBase("/tests/" + test)}" class="underline">${test}</a>
             </li>`,
               )
               .join("\n")}
@@ -110,7 +110,7 @@ export default defineEventHandler((event) => {
               ${deployments
                 .map((d) =>
                   d.url
-                    ? /* html */ ` <option value="${d.url}" ${d.url === currentDeployment.url ? "selected" : ""}>${d.name}</option>`
+                    ? /* html */ ` <option value="${d.url + baseURL.slice(1)}" ${d.url === currentDeployment.url ? "selected" : ""}>${d.name}</option>`
                     : /* html */ `<option disabled>${d.name}</option>`,
                 )
                 .join("\n")}
@@ -139,7 +139,7 @@ export default defineEventHandler((event) => {
       const el = document.getElementById("tests-" + test + "-status");
       el.innerHTML = "⏳";
       const iframe = document.createElement("iframe");
-      iframe.src = "${getURL("/tests/")}" + test;
+      iframe.src = "${withBase("/tests/")}" + test;
       iframe.style.display = "none";
       document.body.appendChild(iframe);
     }
