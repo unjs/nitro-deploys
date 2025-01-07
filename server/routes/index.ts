@@ -15,6 +15,12 @@ if (import.meta.dev) {
     docs: "",
   });
 }
+
+const nitroVersion = useRuntimeConfig().nitroVersion;
+const commitHash = nitroVersion.split(".").pop();
+const version = nitroVersion.split("-")[0];
+const gitURL = `https://github.com/nitrojs/nitro/tree/${commitHash || `v${version}`}`;
+
 export default defineEventHandler((event) => {
   const url = getRequestURL(event, {
     xForwardedHost: true,
@@ -121,13 +127,14 @@ export default defineEventHandler((event) => {
                 .join("\n")}
             </select>
           </div>
-          <div class="mt-2">
-          <p>Generated at ${new Date().toUTCString()}</p>
-            <p>
-              <a href="https://nitro.unjs.io/" class="underline" target="_blank" rel="noopener">Nitro</a><span
+          <div class="mt-2 pt-4">
+          <p class="text-xs text-gray-100">Generated at ${new Date().toUTCString()}</p>
+            <p class="text-xs">
+              <a href="${gitURL}" class="underline" target="_blank" rel="noopener">Nitro<span
                 class="text-gray-200">@${useRuntimeConfig().nitroVersion}</span>
+                </a>
             </p>
-            <p class="text-center">
+            <p class="text-xs">
               <a href="https://github.com/nitrojs/nitro-deploys" class="underline" target="_blank" rel="noopener">source code</a>
               </a>
             </p>
