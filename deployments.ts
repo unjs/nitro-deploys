@@ -123,7 +123,6 @@ export const deployments = [
   },
   {
     name: "Stormkit",
-    broken: true,
     url: "https://nitro.stormkit.dev/",
     dash: "https://app.stormkit.io/",
     docs: "https://nitro.unjs.io/deploy/providers/stormkit",
