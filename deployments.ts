@@ -19,7 +19,7 @@ export const deployments = [
   },
   {
     name: "Azure Static Web Apps",
-    url: "",
+    url: "https://delightful-mushroom-0f662f303.4.azurestaticapps.net/",
     dash: "https://azure.microsoft.com/en-us/products/app-service/static",
     docs: "https://nitro.unjs.io/deploy/providers/azure#azure-static-web-apps",
   },

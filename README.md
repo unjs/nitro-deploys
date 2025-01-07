@@ -9,7 +9,7 @@ Continues [Nitro](https://nitro.unjs.io/) deployments for end-to-end testing dep
 - Alwaysdata ([docs](https://nitro.unjs.io/deploy/providers/alwaysdata) | [deployment](https://nitro.alwaysdata.net/base/) )
 - AWS Lambda ([docs](https://nitro.unjs.io/deploy/providers/aws) | ~~deployment~~ )
 - AWS Amplify ([docs](https://nitro.unjs.io/deploy/providers/aws-amplify) | ~~deployment~~ )
-- Azure Static Web Apps ([docs](https://nitro.unjs.io/deploy/providers/azure#azure-static-web-apps) | ~~deployment~~ )
+- Azure Static Web Apps ([docs](https://nitro.unjs.io/deploy/providers/azure#azure-static-web-apps) | [deployment](https://delightful-mushroom-0f662f303.4.azurestaticapps.net/base/) )
 - Azure Functions ([docs](https://nitro.unjs.io/deploy/providers/azure#azure-functions) | ~~deployment~~ )
 - Cleavr ([docs](https://nitro.unjs.io/deploy/providers/cleavr) | ~~deployment~~ )
 - Cloudflare Pages ([docs](https://nitro.unjs.io/deploy/providers/cloudflare) | [deployment](https://nitro-deployment.pages.dev/base/) )
