@@ -10,6 +10,9 @@ export default defineNitroConfig({
   runtimeConfig: {
     nitroVersion: nitroPkg.version,
   },
+  output: {
+    publicDir: "{{ rootDir }}/.stormkit/public/{{ baseURL }}",
+  },
   publicAssets: [
     {
       baseURL: "/_dist",
